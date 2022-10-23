@@ -13,7 +13,7 @@
       
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.4">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
     
     
       
@@ -21,7 +21,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.80dcb947.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -335,6 +335,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../upgrade/" class="md-nav__link">
+        Upgrade guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -344,7 +359,7 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -359,13 +374,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_7">
           Core utilities
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Core utilities" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Core utilities
         </label>
@@ -766,7 +781,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" checked>
       
       
       
@@ -777,13 +792,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_6_4">
+        <label class="md-nav__link" for="__nav_7_4">
           Event Handler
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Event Handler" data-md-level="2">
-        <label class="md-nav__title" for="__nav_6_4">
+        <label class="md-nav__title" for="__nav_7_4">
           <span class="md-nav__icon md-icon"></span>
           Event Handler
         </label>
@@ -843,7 +858,7 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
       
       
       
@@ -872,13 +887,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_7">
+        <label class="md-nav__link" for="__nav_8">
           Utilities
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Utilities" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
+        <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Utilities
         </label>
@@ -975,7 +990,7 @@
   
     <li class="md-nav__item">
       <a href="../../utilities/parser/" class="md-nav__link">
-        Parser
+        Parser (Pydantic)
       </a>
     </li>
   
@@ -3335,6 +3350,10 @@ for the given name and level to the logging module. By default, this logs all bo
 </code></pre></div></td></tr></table></div>
 <h3 id="how-can-i-enable-powertools-logging-for-imported-libraries">How can I enable Powertools logging for imported libraries?<a class="headerlink" href="#how-can-i-enable-powertools-logging-for-imported-libraries" title="Permanent link">&para;</a></h3>
 <p>You can copy the Logger setup to all or sub-sets of registered external loggers. Use the <code>copy_config_to_registered_logger</code> method to do this.</p>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<p>To help differentiate between loggers, we include the standard logger <code>name</code> attribute for all loggers we copied configuration to.</p>
+</details>
 <p>By default all registered loggers will be modified. You can change this behavior by providing <code>include</code> and <code>exclude</code> attributes. You can also provide optional <code>log_level</code> attribute external loggers will be configured with.</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Cloning Logger config to all other registered standard loggers</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -3359,7 +3378,7 @@ for the given name and level to the logging module. By default, this logs all bo
 </span><span class="n">external_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;test message&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="how-can-i-add-standard-library-logging-attributes-to-a-log-record">How can I add standard library logging attributes to a log record?<a class="headerlink" href="#how-can-i-add-standard-library-logging-attributes-to-a-log-record" title="Permanent link">&para;</a></h3>
-<p>The Python standard library log records contains a <a href="https://docs.python.org/3/library/logging.html#logrecord-attributes" target="_blank">large set of atttributes</a>, however only a few are included in Powertools Logger log record by default.</p>
+<p>The Python standard library log records contains a <a href="https://docs.python.org/3/library/logging.html#logrecord-attributes" target="_blank">large set of attributes</a>, however only a few are included in Powertools Logger log record by default.</p>
 <p>You can include any of these logging attributes as key value arguments (<code>kwargs</code>) when instantiating <code>Logger</code> or <code>LambdaPowertoolsFormatter</code>.</p>
 <p>You can also add them later anywhere in your code with <code>append_keys</code>, or remove them with <code>remove_keys</code> methods.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="21:2"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">append_and_remove_keys.py</label><label for="__tabbed_21_2">append_and_remove_keys_output.json</label></div>
@@ -3552,7 +3571,7 @@ for the given name and level to the logging module. By default, this logs all bo
   <small>
     
       Last update:
-      2022-10-03
+      2022-10-12
     
   </small>
 </div>
