@@ -4,20 +4,6 @@
 <a name="unreleased"></a>
 # Unreleased
 
-## Documentation
-
-* **index:** fold support us banner
-* **index:** add quotes to pip for zsh customers
-* **install:** address early v2 feedback on installation and project support
-
-## Maintenance
-
-* **ci:** fix typo on version description
-* **docs:** remove v2 banner on top of the docs
-
-
-<a name="v2.0.0"></a>
-## [v2.0.0] - 2022-10-24
 ## Bug Fixes
 
 * lock dependencies
@@ -43,8 +29,11 @@
 ## Documentation
 
 * **batch:** remove legacy reference to sqs processor
-* **homepage:** note about v2 version
 * **homepage:** auto-update Layer ARN on every release ([#1610](https://github.com/awslabs/aws-lambda-powertools-python/issues/1610))
+* **homepage:** note about v2 version
+* **index:** fold support us banner
+* **index:** add quotes to pip for zsh customers
+* **install:** address early v2 feedback on installation and project support
 * **roadmap:** refresh roadmap post-v2 launch
 * **roadmap:** include observability provider and lambda layer themes before v2
 * **upgrade_guide:** add latest changes and quick summary ([#1623](https://github.com/awslabs/aws-lambda-powertools-python/issues/1623))
@@ -60,6 +49,7 @@
 * **event_handler:** add cookies as 1st class citizen in v2 ([#1487](https://github.com/awslabs/aws-lambda-powertools-python/issues/1487))
 * **idempotency:** support methods with the same name (ABCs) by including fully qualified name in v2 ([#1535](https://github.com/awslabs/aws-lambda-powertools-python/issues/1535))
 * **layer:** publish SAR v2 via Github actions ([#1585](https://github.com/awslabs/aws-lambda-powertools-python/issues/1585))
+* **layers:** add layer balancer script ([#1643](https://github.com/awslabs/aws-lambda-powertools-python/issues/1643))
 * **layers:** add support for publishing v2 layer ([#1558](https://github.com/awslabs/aws-lambda-powertools-python/issues/1558))
 * **parameters:** migrate AppConfig to new APIs due to API deprecation ([#1553](https://github.com/awslabs/aws-lambda-powertools-python/issues/1553))
 * **tracer:** support methods with the same name (ABCs) by including fully qualified name in v2 ([#1486](https://github.com/awslabs/aws-lambda-powertools-python/issues/1486))
@@ -67,14 +57,15 @@
 ## Maintenance
 
 * update v2 layer ARN on documentation
+* bump pyproject version to 2.0
 * update v2 layer ARN on documentation
 * update v2 layer ARN on documentation
 * update v2 layer ARN on documentation
 * merge v2 branch
-* bump pyproject version to 2.0
 * **ci:** make release process manual
-* **ci:** migrate E2E tests to CDK CLI and off Docker ([#1501](https://github.com/awslabs/aws-lambda-powertools-python/issues/1501))
+* **ci:** fix typo on version description
 * **ci:** remove v1 workflows ([#1617](https://github.com/awslabs/aws-lambda-powertools-python/issues/1617))
+* **ci:** migrate E2E tests to CDK CLI and off Docker ([#1501](https://github.com/awslabs/aws-lambda-powertools-python/issues/1501))
 * **core:** expose modules in the Top-level package ([#1517](https://github.com/awslabs/aws-lambda-powertools-python/issues/1517))
 * **dep:** add cfn-lint as a dev dependency; pre-commit ([#1612](https://github.com/awslabs/aws-lambda-powertools-python/issues/1612))
 * **deps:** remove email-validator; use Str over EmailStr in SES model ([#1608](https://github.com/awslabs/aws-lambda-powertools-python/issues/1608))
@@ -82,6 +73,7 @@
 * **deps:** lock importlib to 4.x
 * **deps-dev:** bump mypy-boto3-s3 from 1.24.76 to 1.24.94 ([#1622](https://github.com/awslabs/aws-lambda-powertools-python/issues/1622))
 * **deps-dev:** bump aws-cdk-lib from 2.46.0 to 2.47.0 ([#1629](https://github.com/awslabs/aws-lambda-powertools-python/issues/1629))
+* **docs:** remove v2 banner on top of the docs
 * **layer:** bump to 1.31.1 (v39)
 
 
@@ -2506,8 +2498,7 @@
 * Merge pull request [#5](https://github.com/awslabs/aws-lambda-powertools-python/issues/5) from jfuss/feat/python38
 
 
-[Unreleased]: https://github.com/awslabs/aws-lambda-powertools-python/compare/v2.0.0...HEAD
-[v2.0.0]: https://github.com/awslabs/aws-lambda-powertools-python/compare/v1.31.1...v2.0.0
+[Unreleased]: https://github.com/awslabs/aws-lambda-powertools-python/compare/v1.31.1...HEAD
 [v1.31.1]: https://github.com/awslabs/aws-lambda-powertools-python/compare/v1.31.0...v1.31.1
 [v1.31.0]: https://github.com/awslabs/aws-lambda-powertools-python/compare/v1.30.0...v1.31.0
 [v1.30.0]: https://github.com/awslabs/aws-lambda-powertools-python/compare/v1.29.2...v1.30.0
