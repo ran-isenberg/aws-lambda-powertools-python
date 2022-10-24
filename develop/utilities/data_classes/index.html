@@ -79,17 +79,6 @@
     </div>
     <div data-md-component="announce">
       
-        <aside class="md-banner">
-          <div class="md-banner__inner md-grid md-typeset">
-            
-            
-  👋 Powertools for Python v2 is coming soon!
-  We encourage you to add your feedback and follow the progress on <a href="https://github.com/awslabs/aws-lambda-powertools-python/issues/1459">the RFC</a>.
-
-          </div>
-          
-        </aside>
-      
     </div>
     
       <div data-md-component="outdated" hidden>
@@ -2827,10 +2816,16 @@ function to access the data either as json or plain text, depending on the origi
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">base64</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">base64</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
-<span class="kn">from</span> <span class="nn">aws_lambda_powertools.utilities.data_classes</span> <span class="kn">import</span> <span class="n">KinesisFirehoseEvent</span><span class="p">,</span> <span class="n">event_source</span>
+<span class="kn">from</span> <span class="nn">aws_lambda_powertools.utilities.data_classes</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">KinesisFirehoseEvent</span><span class="p">,</span>
+    <span class="n">event_source</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">aws_lambda_powertools.utilities.typing</span> <span class="kn">import</span> <span class="n">LambdaContext</span>
 
 

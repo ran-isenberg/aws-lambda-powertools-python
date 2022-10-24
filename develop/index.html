@@ -79,17 +79,6 @@
     </div>
     <div data-md-component="announce">
       
-        <aside class="md-banner">
-          <div class="md-banner__inner md-grid md-typeset">
-            
-            
-  👋 Powertools for Python v2 is coming soon!
-  We encourage you to add your feedback and follow the progress on <a href="https://github.com/awslabs/aws-lambda-powertools-python/issues/1459">the RFC</a>.
-
-          </div>
-          
-        </aside>
-      
     </div>
     
       <div data-md-component="outdated" hidden>
@@ -965,36 +954,46 @@
 
   <h1>Homepage</h1>
 
-<!-- markdownlint-disable MD043 -->
+<!-- markdownlint-disable MD043 MD013 -->
 
-<p>A suite of utilities for AWS Lambda functions to ease adopting best practices such as tracing, structured logging, custom metrics, idempotency, batching, and more.</p>
-<details class="note" open="open">
-<summary>Note</summary>
+<p>A suite of utilities for AWS Lambda functions to ease adopting best practices such as tracing, structured logging, custom metrics, idempotency, batching, <a href="#features"><strong>and more</strong></a>.</p>
+<details class="tip" open="open">
+<summary>Tip</summary>
 <p>Powertools is also available for <a href="https://awslabs.github.io/aws-lambda-powertools-java/" target="_blank">Java</a>, <a href="https://awslabs.github.io/aws-lambda-powertools-typescript/latest/" target="_blank">TypeScript</a>, and <a href="https://awslabs.github.io/aws-lambda-powertools-dotnet/" target="_blank">.NET</a></p>
+</details>
+<details class="hint">
+<summary>Support this project by becoming a reference customer, sharing your work, or using Layers/SAR <img alt="❤️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2764.png" title=":heart:" /></summary>
+<p>You can choose to support us in three ways:</p>
+<p>1) <a href="https://github.com/awslabs/aws-lambda-powertools-python/issues/new?assignees=&amp;labels=customer-reference&amp;template=support_powertools.yml&amp;title=%5BSupport+Lambda+Powertools%5D%3A+%3Cyour+organization+name%3E"><strong>Become a reference customers</strong></a>. This gives us permission to list your company in our documentation.</p>
+<p>2) <a href="https://github.com/awslabs/aws-lambda-powertools-python/issues/new?assignees=&amp;labels=community-content&amp;template=share_your_work.yml&amp;title=%5BI+Made+This%5D%3A+%3CTITLE%3E"><strong>Share your work</strong></a>. Blog posts, video, sample projects you used Powertools!</p>
+<p>3) Use <a href="#lambda-layer"><strong>Lambda Layers</strong></a> or <a href="#sar"><strong>SAR</strong></a>, if possible. This helps us understand who uses Powertools in a non-intrusive way, and helps us gain future investments for other Lambda Powertools languages.</p>
+<p>When using Layers, you can add Lambda Powertools as a dev dependency (or as part of your virtual env) to not impact the development process.</p>
 </details>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
 <p>Powertools is available in the following formats:</p>
 <ul>
-<li><strong>Lambda Layer (x86_64)</strong>: <a class="copyMe" href="#"><strong>arn:aws:lambda:{region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</strong></a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></li>
-<li><strong>Lambda Layer (arm64)</strong>: <a class="copyMe" href="#"><strong>arn:aws:lambda:{region}:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</strong></a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></li>
-<li><strong>PyPi</strong>: <strong><code>pip install aws-lambda-powertools</code></strong></li>
+<li><strong>Lambda Layer (x86_64)</strong>: <a class="copyMe" href="#"><strong>arn:aws:lambda:{region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</strong></a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></li>
+<li><strong>Lambda Layer (arm64)</strong>: <a class="copyMe" href="#"><strong>arn:aws:lambda:{region}:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</strong></a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></li>
+<li><strong>PyPi</strong>: <strong><code>pip install "aws-lambda-powertools"</code></strong></li>
 </ul>
 <details class="info" open="open">
 <summary>Some utilities require additional dependencies</summary>
 <p>You can stop reading if you're using Lambda Layer.</p>
-<p><a href="core/tracer/" target="_blank">Tracer</a>, <a href="utilities/validation/" target="_blank">Validation</a> and <a href="utilities/parser/" target="_blank">Parser</a> require additional dependencies. If you prefer to install all of them, use <code>pip install aws-lambda-powertools[all]</code>.</p>
-</details>
-<details class="hint" open="open">
-<summary>Support this project by using Lambda Layers <img alt="❤️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2764.png" title=":heart:" /></summary>
-<p>Lambda Layers allow us to understand who uses this library in a non-intrusive way. This helps us justify and gain future investments for other Lambda Powertools languages.</p>
-<p>When using Layers, you can add Lambda Powertools as a dev dependency (or as part of your virtual env) to not impact the development process.</p>
+<p><a href="core/tracer/" target="_blank">Tracer</a>, <a href="utilities/validation/" target="_blank">Validation</a> and <a href="utilities/parser/" target="_blank">Parser</a> require additional dependencies. If you prefer to install all of them, use <code>pip install "aws-lambda-powertools[all]"</code>.</p>
+<p>For example:</p>
+<ul>
+<li><a href="core/tracer/#install" target="_blank">Tracer</a>: <strong><code>pip install "aws-lambda-powertools[tracer]"</code></strong></li>
+<li><a href="utilities/validation/#install" target="_blank">Validation</a>: <strong><code>pip install "aws-lambda-powertools[validation]"</code></strong></li>
+<li><a href="utilities/parser/#install" target="_blank">Parser</a>: <strong><code>pip install "aws-lambda-powertools[parser]"</code></strong></li>
+<li><a href="core/tracer/#install" target="_blank">Tracer</a> and <a href="utilities/parser/#install" target="_blank">Parser</a>: <strong><code>pip install "aws-lambda-powertools[tracer,parser]"</code></strong></li>
+</ul>
 </details>
 <h3 id="local-development">Local development<a class="headerlink" href="#local-development" title="Permanent link">&para;</a></h3>
 <p>Powertools relies on the AWS SDK bundled in the Lambda runtime. This helps us achieve an optimal package size and initialization.</p>
 <p>This means you need to add AWS SDK as a development dependency (not as a production dependency).</p>
 <ul>
-<li><strong>Pip</strong>: <code>pip install aws-lambda-powertools[aws-sdk]</code></li>
-<li><strong>Poetry</strong>: <code>poetry add aws-lambda-powertools[aws-sdk] --dev</code></li>
+<li><strong>Pip</strong>: <code>pip install "aws-lambda-powertools[aws-sdk]"</code></li>
+<li><strong>Poetry</strong>: <code>poetry add "aws-lambda-powertools[aws-sdk]" --dev</code></li>
 <li><strong>Pipenv</strong>: <code>pipenv install --dev "aws-lambda-powertools[aws-sdk]"</code></li>
 </ul>
 <details class="note" open="open">
@@ -1005,7 +1004,7 @@
 <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html" target="_blank">Lambda Layer</a> is a .zip file archive that can contain additional code, pre-packaged dependencies, data,  or configuration files. Layers promote code sharing and separation of responsibilities so that you can iterate faster on writing business logic.</p>
 <p>You can include Lambda Powertools Lambda Layer using <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-layers.html#invocation-layers-using" target="_blank">AWS Lambda Console</a>, or your preferred deployment framework.</p>
 <details class="note">
-<summary>Note: Expand to copy any regional Lambda Layer ARN</summary>
+<summary>Note: Click to expand and copy any regional Lambda Layer ARN</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">x86_64</label><label for="__tabbed_1_2">arm64</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1019,91 +1018,91 @@
 <tbody>
 <tr>
 <td><code>af-south-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:af-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:af-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-east-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-east-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-east-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-northeast-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-northeast-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-northeast-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-northeast-2</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-northeast-2:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-northeast-2:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-northeast-3</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-northeast-3:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-northeast-3:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-south-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-southeast-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-southeast-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-southeast-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-southeast-2</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-southeast-2:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-southeast-2:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-southeast-3</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-southeast-3:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-southeast-3:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ca-central-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ca-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ca-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>eu-central-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>eu-north-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:eu-north-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:eu-north-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>eu-south-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:eu-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:eu-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>eu-west-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:eu-west-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:eu-west-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>eu-west-2</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:eu-west-2:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:eu-west-2:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>eu-west-3</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:eu-west-3:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:eu-west-3:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>me-south-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:me-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:me-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>sa-east-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:sa-east-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:sa-east-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>us-east-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:us-east-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:us-east-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>us-east-2</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:us-east-2:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:us-east-2:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>us-west-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:us-west-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:us-west-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>us-west-2</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:us-west-2:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:us-west-2:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 </tbody>
 </table>
@@ -1119,91 +1118,91 @@
 <tbody>
 <tr>
 <td><code>af-south-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:af-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:af-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-east-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-east-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-east-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-northeast-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-northeast-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-northeast-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-northeast-2</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-northeast-2:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-northeast-2:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-northeast-3</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-northeast-3:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-northeast-3:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-south-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:8</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-southeast-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-southeast-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-southeast-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-southeast-2</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-southeast-2:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-southeast-2:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ap-southeast-3</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ap-southeast-3:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ap-southeast-3:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>ca-central-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:ca-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:ca-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>eu-central-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>eu-north-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:eu-north-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:eu-north-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>eu-south-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:eu-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:eu-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>eu-west-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:eu-west-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:eu-west-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>eu-west-2</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:eu-west-2:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:eu-west-2:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>eu-west-3</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:eu-west-3:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:eu-west-3:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>me-south-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:me-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:me-south-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>sa-east-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:sa-east-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:sa-east-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>us-east-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:us-east-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:us-east-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>us-east-2</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:us-east-2:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:us-east-2:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>us-west-1</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:us-west-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:us-west-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 <tr>
 <td><code>us-west-2</code></td>
-<td><a class="copyMe" href="#">arn:aws:lambda:us-west-2:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
+<td><a class="copyMe" href="#">arn:aws:lambda:us-west-2:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</a><img alt="📋" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f4cb.png" title=":clipboard:" /></td>
 </tr>
 </tbody>
 </table>
@@ -1211,6 +1210,8 @@
 </div>
 </div>
 </details>
+<details class="note">
+<summary>Note: Click to expand and copy code snippets for popular frameworks</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">x86_64</label><label for="__tabbed_2_2">arm64</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1225,7 +1226,7 @@
 <span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::Serverless::Function</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Layers</span><span class="p">:</span><span class="w"></span>
-<span class="hll"><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!Sub</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:lambda:${AWS::Region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!Sub</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:lambda:${AWS::Region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</span><span class="w"></span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1237,7 +1238,7 @@
 <span class="w">    </span><span class="nt">hello</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">handler</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lambda_function.lambda_handler</span><span class="w"></span>
 <span class="w">      </span><span class="nt">layers</span><span class="p">:</span><span class="w"></span>
-<span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:lambda:${aws:region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:6</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:lambda:${aws:region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:11</span><span class="w"></span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1268,7 +1269,7 @@
         <span class="n">powertools_layer</span> <span class="o">=</span> <span class="n">aws_lambda</span><span class="o">.</span><span class="n">LayerVersion</span><span class="o">.</span><span class="n">from_layer_version_arn</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;lambda-powertools&quot;</span><span class="p">,</span>
-<span class="hll">            <span class="n">layer_version_arn</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;arn:aws:lambda:</span><span class="si">{</span><span class="n">env</span><span class="o">.</span><span class="n">region</span><span class="si">}</span><span class="s2">:017000801446:layer:AWSLambdaPowertoolsPythonV2:6&quot;</span>
+<span class="hll">            <span class="n">layer_version_arn</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;arn:aws:lambda:</span><span class="si">{</span><span class="n">env</span><span class="o">.</span><span class="n">region</span><span class="si">}</span><span class="s2">:017000801446:layer:AWSLambdaPowertoolsPythonV2:11&quot;</span>
 </span>        <span class="p">)</span>
         <span class="n">aws_lambda</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
             <span class="s1">&#39;sample-app-lambda&#39;</span><span class="p">,</span>
@@ -1354,7 +1355,7 @@
 <span class="w">  </span><span class="na">role</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="nv">aws_iam_role.iam_for_lambda.arn</span><span class="w"></span>
 <span class="w">  </span><span class="na">handler</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;index.test&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="na">runtime</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;python3.9&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="na">layers</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;arn:aws:lambda:{region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:6&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="na">layers</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;arn:aws:lambda:{region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:11&quot;</span><span class="p">]</span><span class="w"></span>
 <span class="hll">
 </span><span class="w">  </span><span class="na">source_code_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">filebase64sha256</span><span class="p">(</span><span class="s2">&quot;lambda_function_payload.zip&quot;</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -1389,7 +1390,7 @@
 ? Do you want to configure advanced settings? Yes
 ...
 ? Do you want to <span class="nb">enable</span> Lambda layers <span class="k">for</span> this <span class="k">function</span>? Yes
-? Enter up to <span class="m">5</span> existing Lambda layer ARNs <span class="o">(</span>comma-separated<span class="o">)</span>: arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6
+? Enter up to <span class="m">5</span> existing Lambda layer ARNs <span class="o">(</span>comma-separated<span class="o">)</span>: arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11
 ❯ amplify push -y
 
 
@@ -1400,13 +1401,13 @@ General information
 - Name: &lt;NAME-OF-FUNCTION&gt;
 ? Which setting <span class="k">do</span> you want to update? Lambda layers configuration
 ? Do you want to <span class="nb">enable</span> Lambda layers <span class="k">for</span> this <span class="k">function</span>? Yes
-? Enter up to <span class="m">5</span> existing Lambda layer ARNs <span class="o">(</span>comma-separated<span class="o">)</span>: arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:6
+? Enter up to <span class="m">5</span> existing Lambda layer ARNs <span class="o">(</span>comma-separated<span class="o">)</span>: arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:11
 ? Do you want to edit the <span class="nb">local</span> lambda <span class="k">function</span> now? No
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <p>Change {region} to your AWS region, e.g. <code>eu-west-1</code></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">AWS CLI</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  aws lambda get-layer-version-by-arn --arn arn:aws:lambda:<span class="o">{</span>region<span class="o">}</span>:017000801446:layer:AWSLambdaPowertoolsPythonV2:6 --region <span class="o">{</span>region<span class="o">}</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">AWS CLI</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  aws lambda get-layer-version-by-arn --arn arn:aws:lambda:<span class="o">{</span>region<span class="o">}</span>:017000801446:layer:AWSLambdaPowertoolsPythonV2:11 --region <span class="o">{</span>region<span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 <p>The pre-signed URL to download this Lambda Layer will be within <code>Location</code> key.</p>
 </div>
@@ -1427,7 +1428,7 @@ General information
 <span class="w">    </span><span class="nt">Properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Architectures</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">arm64</span><span class="p p-Indicator">]</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Layers</span><span class="p">:</span><span class="w"></span>
-<span class="hll"><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!Sub</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:lambda:${AWS::Region}:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!Sub</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:lambda:${AWS::Region}:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</span><span class="w"></span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1441,7 +1442,7 @@ General information
 <span class="w">        </span><span class="nt">handler</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lambda_function.lambda_handler</span><span class="w"></span>
 <span class="w">        </span><span class="nt">architecture</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arm64</span><span class="w"></span>
 <span class="w">        </span><span class="nt">layers</span><span class="p">:</span><span class="w"></span>
-<span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:lambda:${aws:region}:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:lambda:${aws:region}:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11</span><span class="w"></span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1473,7 +1474,7 @@ General information
         <span class="n">powertools_layer</span> <span class="o">=</span> <span class="n">aws_lambda</span><span class="o">.</span><span class="n">LayerVersion</span><span class="o">.</span><span class="n">from_layer_version_arn</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;lambda-powertools&quot;</span><span class="p">,</span>
-<span class="hll">            <span class="n">layer_version_arn</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;arn:aws:lambda:</span><span class="si">{</span><span class="n">env</span><span class="o">.</span><span class="n">region</span><span class="si">}</span><span class="s2">:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7&quot;</span>
+<span class="hll">            <span class="n">layer_version_arn</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;arn:aws:lambda:</span><span class="si">{</span><span class="n">env</span><span class="o">.</span><span class="n">region</span><span class="si">}</span><span class="s2">:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11&quot;</span>
 </span>        <span class="p">)</span>
         <span class="n">aws_lambda</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
             <span class="s1">&#39;sample-app-lambda&#39;</span><span class="p">,</span>
@@ -1561,7 +1562,7 @@ General information
 <span class="w">  </span><span class="na">role</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="nv">aws_iam_role.iam_for_lambda.arn</span><span class="w"></span>
 <span class="w">  </span><span class="na">handler</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;index.test&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="na">runtime</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;python3.9&quot;</span><span class="w"></span>
-<span class="hll"><span class="w">  </span><span class="na">layers</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;arn:aws:lambda:{region}:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="hll"><span class="w">  </span><span class="na">layers</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;arn:aws:lambda:{region}:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11&quot;</span><span class="p">]</span><span class="w"></span>
 </span><span class="w">  </span><span class="na">architectures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;arm64&quot;</span><span class="p">]</span><span class="w"></span>
 
 <span class="w">  </span><span class="na">source_code_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">filebase64sha256</span><span class="p">(</span><span class="s2">&quot;lambda_function_payload.zip&quot;</span><span class="p">)</span><span class="w"></span>
@@ -1597,7 +1598,7 @@ General information
 ? Do you want to configure advanced settings? Yes
 ...
 ? Do you want to <span class="nb">enable</span> Lambda layers <span class="k">for</span> this <span class="k">function</span>? Yes
-? Enter up to <span class="m">5</span> existing Lambda layer ARNs <span class="o">(</span>comma-separated<span class="o">)</span>: arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7
+? Enter up to <span class="m">5</span> existing Lambda layer ARNs <span class="o">(</span>comma-separated<span class="o">)</span>: arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11
 ❯ amplify push -y
 
 
@@ -1608,13 +1609,13 @@ General information
 - Name: &lt;NAME-OF-FUNCTION&gt;
 ? Which setting <span class="k">do</span> you want to update? Lambda layers configuration
 ? Do you want to <span class="nb">enable</span> Lambda layers <span class="k">for</span> this <span class="k">function</span>? Yes
-? Enter up to <span class="m">5</span> existing Lambda layer ARNs <span class="o">(</span>comma-separated<span class="o">)</span>: arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7
+? Enter up to <span class="m">5</span> existing Lambda layer ARNs <span class="o">(</span>comma-separated<span class="o">)</span>: arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11
 ? Do you want to edit the <span class="nb">local</span> lambda <span class="k">function</span> now? No
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <p>Change {region} to your AWS region, e.g. <code>eu-west-1</code></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">AWS CLI</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>aws lambda get-layer-version-by-arn --arn arn:aws:lambda:<span class="o">{</span>region<span class="o">}</span>:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:7 --region <span class="o">{</span>region<span class="o">}</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">AWS CLI</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>aws lambda get-layer-version-by-arn --arn arn:aws:lambda:<span class="o">{</span>region<span class="o">}</span>:017000801446:layer:AWSLambdaPowertoolsPythonV2-Arm64:11 --region <span class="o">{</span>region<span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 <p>The pre-signed URL to download this Lambda Layer will be within <code>Location</code> key.</p>
 </div>
@@ -1623,6 +1624,7 @@ General information
 </div>
 </div>
 </div>
+</details>
 <details class="warning" open="open">
 <summary>Warning: Limitations</summary>
 <p>Container Image deployment (OCI) or inline Lambda functions do not support Lambda Layers.</p>
@@ -1630,7 +1632,7 @@ General information
 </details>
 <h4 id="sar">SAR<a class="headerlink" href="#sar" title="Permanent link">&para;</a></h4>
 <p>Serverless Application Repository (SAR) App deploys a CloudFormation stack with a copy of our Lambda Layer in your AWS account and region.</p>
-<p>Despite having more steps compared to the <a href="#lambda-layer">public Layer ARN</a> option, the benefit is that you can specify a semantic version you want to use.</p>
+<p>Compared with the <a href="#lambda-layer">public Layer ARN</a> option, SAR allows you to choose a semantic version and deploys a Layer in your target account.</p>
 <table>
 <thead>
 <tr>
@@ -1652,11 +1654,9 @@ General information
 </tr>
 </tbody>
 </table>
-<details class="tip" open="open">
-<summary>Tip</summary>
+<details class="note">
+<summary>Click to expand and copy SAR code snippets for popular frameworks</summary>
 <p>You can create a shared Lambda Layers stack and make this along with other account level layers stack.</p>
-</details>
-<p>If using SAM, you can include this SAR App as part of your shared Layers stack, and lock to a specific semantic version. Once deployed, it'll be available across the account this is deployed to.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:4"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">SAM</label><label for="__tabbed_5_2">Serverless framework</label><label for="__tabbed_5_3">CDK</label><label for="__tabbed_5_4">Terraform</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1876,6 +1876,7 @@ General information
 </div>
 </div>
 </div>
+</details>
 <details class="example">
 <summary>Example: Least-privileged IAM permissions to deploy Layer</summary>
 <blockquote>
@@ -1997,11 +1998,14 @@ General information
 </div>
 </div>
 </details>
+<details class="note">
+<summary>Click to expand and copy an AWS CLI command to list all versions available in SAR</summary>
 <p>You can fetch available versions via SAR ListApplicationVersions API:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">AWS CLI example</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>aws serverlessrepo list-application-versions <span class="se">\</span>
     --application-id arn:aws:serverlessrepo:eu-west-1:057560766410:applications/aws-lambda-powertools-python-layer
 </code></pre></div></td></tr></table></div>
+</details>
 <h2 id="quick-getting-started">Quick getting started<a class="headerlink" href="#quick-getting-started" title="Permanent link">&para;</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Hello world example using SAM CLI</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sam init --location https://github.com/aws-samples/cookiecutter-aws-sam-python
 </code></pre></div></td></tr></table></div>
@@ -2016,59 +2020,59 @@ General information
 </thead>
 <tbody>
 <tr>
-<td><a href="core/tracer/">Tracing</a></td>
+<td><a href="core/tracer/"><strong>Tracing</strong></a></td>
 <td>Decorators and utilities to trace Lambda function handlers, and both synchronous and asynchronous functions</td>
 </tr>
 <tr>
-<td><a href="core/logger/">Logger</a></td>
+<td><a href="core/logger/"><strong>Logger</strong></a></td>
 <td>Structured logging made easier, and decorator to enrich structured logging with key Lambda context details</td>
 </tr>
 <tr>
-<td><a href="core/metrics/">Metrics</a></td>
+<td><a href="core/metrics/"><strong>Metrics</strong></a></td>
 <td>Custom Metrics created asynchronously via CloudWatch Embedded Metric Format (EMF)</td>
 </tr>
 <tr>
-<td><a href="core/event_handler/appsync/">Event handler: AppSync</a></td>
+<td><a href="core/event_handler/appsync/"><strong>Event handler: AppSync</strong></a></td>
 <td>AppSync event handler for Lambda Direct Resolver and Amplify GraphQL Transformer function</td>
 </tr>
 <tr>
-<td><a href="https://awslabs.github.io/aws-lambda-powertools-python/latest/core/event_handler/api_gateway/">Event handler: API Gateway, ALB and Lambda Function URL</a></td>
+<td><a href="https://awslabs.github.io/aws-lambda-powertools-python/latest/core/event_handler/api_gateway/"><strong>Event handler: API Gateway, ALB and Lambda Function URL</strong></a></td>
 <td>Amazon API Gateway REST/HTTP API and ALB event handler for Lambda functions invoked using Proxy integration, and Lambda Function URL</td>
 </tr>
 <tr>
-<td><a href="utilities/middleware_factory/">Middleware factory</a></td>
+<td><a href="utilities/middleware_factory/"><strong>Middleware factory</strong></a></td>
 <td>Decorator factory to create your own middleware to run logic before, and after each Lambda invocation</td>
 </tr>
 <tr>
-<td><a href="utilities/parameters/">Parameters</a></td>
+<td><a href="utilities/parameters/"><strong>Parameters</strong></a></td>
 <td>Retrieve parameter values from AWS Systems Manager Parameter Store, AWS Secrets Manager, or Amazon DynamoDB, and cache them for a specific amount of time</td>
 </tr>
 <tr>
-<td><a href="utilities/batch/">Batch processing</a></td>
+<td><a href="utilities/batch/"><strong>Batch processing</strong></a></td>
 <td>Handle partial failures for AWS SQS batch processing</td>
 </tr>
 <tr>
-<td><a href="utilities/typing/">Typing</a></td>
+<td><a href="utilities/typing/"><strong>Typing</strong></a></td>
 <td>Static typing classes to speedup development in your IDE</td>
 </tr>
 <tr>
-<td><a href="utilities/validation/">Validation</a></td>
+<td><a href="utilities/validation/"><strong>Validation</strong></a></td>
 <td>JSON Schema validator for inbound events and responses</td>
 </tr>
 <tr>
-<td><a href="utilities/data_classes/">Event source data classes</a></td>
+<td><a href="utilities/data_classes/"><strong>Event source data classes</strong></a></td>
 <td>Data classes describing the schema of common Lambda event triggers</td>
 </tr>
 <tr>
-<td><a href="utilities/parser/">Parser</a></td>
+<td><a href="utilities/parser/"><strong>Parser</strong></a></td>
 <td>Data parsing and deep validation using Pydantic</td>
 </tr>
 <tr>
-<td><a href="utilities/idempotency/">Idempotency</a></td>
+<td><a href="utilities/idempotency/"><strong>Idempotency</strong></a></td>
 <td>Idempotent Lambda handler</td>
 </tr>
 <tr>
-<td><a href="utilities/feature_flags/">Feature Flags</a></td>
+<td><a href="utilities/feature_flags/"><strong>Feature Flags</strong></a></td>
 <td>A simple rule engine to evaluate when one or multiple features should be enabled depending on the input</td>
 </tr>
 </tbody>
@@ -2204,7 +2208,7 @@ General information
   <small>
     
       Last update:
-      2022-10-21
+      2022-10-24
     
   </small>
 </div>

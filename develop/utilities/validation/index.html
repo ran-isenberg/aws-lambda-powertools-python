@@ -79,17 +79,6 @@
     </div>
     <div data-md-component="announce">
       
-        <aside class="md-banner">
-          <div class="md-banner__inner md-grid md-typeset">
-            
-            
-  👋 Powertools for Python v2 is coming soon!
-  We encourage you to add your feedback and follow the progress on <a href="https://github.com/awslabs/aws-lambda-powertools-python/issues/1459">the RFC</a>.
-
-          </div>
-          
-        </aside>
-      
     </div>
     
       <div data-md-component="outdated" hidden>
@@ -969,12 +958,6 @@
 <summary>Tip</summary>
 <p>All examples shared in this documentation are available within the <a href="https://github.com/awslabs/aws-lambda-powertools-python/tree/develop/examples" target="_blank">project repository</a>.</p>
 </details>
-<h3 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h3>
-<div class="admonition info">
-<p class="admonition-title">This is not necessary if you're installing Powertools via <a href="../..#lambda-layer" target="_blank">Lambda Layer</a></p>
-</div>
-<p>Add <code>aws-lambda-powertools[validation]</code> as a dependency in your preferred tool: <em>e.g.</em>, <em>requirements.txt</em>, <em>pyproject.toml</em>.</p>
-<p>This will ensure you have the required dependencies before using Validation.</p>
 <p>You can validate inbound and outbound events using <a href="#validator-decorator"><code>validator</code> decorator</a>.</p>
 <p>You can also use the standalone <code>validate</code> function, if you want more control over the validation process such as handling a validation error.</p>
 <details class="tip" open="open">
@@ -986,6 +969,11 @@
 <summary>Warning</summary>
 <p>Both <code>validator</code> decorator and <code>validate</code> standalone function expects your JSON Schema to be a <strong>dictionary</strong>, not a filename.</p>
 </details>
+<h3 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">This is not necessary if you're installing Powertools via <a href="../..#lambda-layer" target="_blank">Lambda Layer/SAR</a></p>
+</div>
+<p>Add <code>aws-lambda-powertools[validation]</code> as a dependency in your preferred tool: <em>e.g.</em>, <em>requirements.txt</em>, <em>pyproject.toml</em>. This will ensure you have the required dependencies before using Validation.</p>
 <h3 id="validator-decorator">Validator decorator<a class="headerlink" href="#validator-decorator" title="Permanent link">&para;</a></h3>
 <p><strong>Validator</strong> decorator is typically used to validate either inbound or functions' response.</p>
 <p>It will fail fast with <code>SchemaValidationError</code> exception if event or response doesn't conform with given JSON Schema.</p>
@@ -1976,7 +1964,7 @@
   <small>
     
       Last update:
-      2022-10-07
+      2022-10-24
     
   </small>
 </div>

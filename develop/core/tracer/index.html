@@ -79,17 +79,6 @@
     </div>
     <div data-md-component="announce">
       
-        <aside class="md-banner">
-          <div class="md-banner__inner md-grid md-typeset">
-            
-            
-  👋 Powertools for Python v2 is coming soon!
-  We encourage you to add your feedback and follow the progress on <a href="https://github.com/awslabs/aws-lambda-powertools-python/issues/1459">the RFC</a>.
-
-          </div>
-          
-        </aside>
-      
     </div>
     
       <div data-md-component="outdated" hidden>
@@ -1097,10 +1086,9 @@
 </details>
 <h3 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
-<p class="admonition-title">This is not necessary if you're installing Powertools via <a href="../..#lambda-layer" target="_blank">Lambda Layer</a></p>
+<p class="admonition-title">This is not necessary if you're installing Powertools via <a href="../..#lambda-layer" target="_blank">Lambda Layer/SAR</a></p>
 </div>
-<p>Add <code>aws-lambda-powertools[tracer]</code> as a dependency in your preferred tool: <em>e.g.</em>, <em>requirements.txt</em>, <em>pyproject.toml</em>.</p>
-<p>This will ensure you have the required dependencies before using Tracer.</p>
+<p>Add <code>aws-lambda-powertools[tracer]</code> as a dependency in your preferred tool: <em>e.g.</em>, <em>requirements.txt</em>, <em>pyproject.toml</em>. This will ensure you have the required dependencies before using Tracer.</p>
 <h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
 <p>Before your use this utility, your AWS Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html#services-xray-permissions">must have permissions</a> to send traces to AWS X-Ray.</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">AWS Serverless Application Model (SAM) example</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1971,7 +1959,7 @@ side effects for file-like objects like boto S3 <a href="https://botocore.amazon
   <small>
     
       Last update:
-      2022-10-07
+      2022-10-24
     
   </small>
 </div>
