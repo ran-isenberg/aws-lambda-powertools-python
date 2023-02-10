@@ -1062,6 +1062,7 @@ category = "dev"
 optional = false
 python-versions = "*"
 files = [
+    {file = "junit-xml-1.9.tar.gz", hash = "sha256:de16a051990d4e25a3982b2dd9e89d671067548718866416faec14d9de56db9f"},
     {file = "junit_xml-1.9-py2.py3-none-any.whl", hash = "sha256:ec5ca1a55aefdd76d28fcc0b135251d156c7106fa979686a4b48d62b761b4732"},
 ]
 
@@ -1281,14 +1282,14 @@ mkdocs = ">=0.17"
 
 [[package]]
 name = "mkdocs-material"
-version = "9.0.4"
+version = "9.0.12"
 description = "Documentation that simply works"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "mkdocs_material-9.0.4-py3-none-any.whl", hash = "sha256:f5f94f5daa0e07deb2f192453f9812c66c4bc0cd48078c60bdde32af137f7357"},
-    {file = "mkdocs_material-9.0.4.tar.gz", hash = "sha256:4f429b4e50242544020f0fc21b9e10062418d3cd1e591c040c4c155506250a66"},
+    {file = "mkdocs_material-9.0.12-py3-none-any.whl", hash = "sha256:ff4233e4f4da0c879db0dbcb532a690a3f86f5a66a0cfcce99a124e82a462afb"},
+    {file = "mkdocs_material-9.0.12.tar.gz", hash = "sha256:4da07b1390c6b78844f1566d723dd045572e645f31b108a1b5062fa7d11aa241"},
 ]
 
 [package.dependencies]
@@ -2653,4 +2654,4 @@ validation = ["fastjsonschema"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.7.4"
-content-hash = "a838d371875b6fb84357e4103d72221ead05352e082743cc9acc138558a48a5a"
+content-hash = "42c31d5185b1b95dbe1151f0feb7589a55b18f4e909de14973684a812efcfa1a"
