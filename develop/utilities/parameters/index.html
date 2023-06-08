@@ -19,18 +19,18 @@
         <link rel="next" href="../batch/">
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.15">
     
     
       
-        <title>Parameters - AWS Lambda Powertools for Python</title>
+        <title>Parameters - Powertools for AWS Lambda (Python)</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -109,7 +109,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="AWS Lambda Powertools for Python" class="md-header__button md-logo" aria-label="AWS Lambda Powertools for Python" data-md-component="logo">
+    <a href="../.." title="Powertools for AWS Lambda (Python)" class="md-header__button md-logo" aria-label="Powertools for AWS Lambda (Python)" data-md-component="logo">
       
   <img src="../../media/aws-logo-light.svg" alt="logo">
 
@@ -121,7 +121,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AWS Lambda Powertools for Python
+            Powertools for AWS Lambda (Python)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -232,12 +232,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="AWS Lambda Powertools for Python" class="md-nav__button md-logo" aria-label="AWS Lambda Powertools for Python" data-md-component="logo">
+    <a href="../.." title="Powertools for AWS Lambda (Python)" class="md-nav__button md-logo" aria-label="Powertools for AWS Lambda (Python)" data-md-component="logo">
       
   <img src="../../media/aws-logo-light.svg" alt="logo">
 
     </a>
-    AWS Lambda Powertools for Python
+    Powertools for AWS Lambda (Python)
   </label>
   
     <div class="md-nav__source">
@@ -1551,6 +1551,10 @@
 <h3 id="fetching-app-configurations">Fetching app configurations<a class="headerlink" href="#fetching-app-configurations" title="Permanent link">&para;</a></h3>
 <p>You can fetch application configurations in AWS AppConfig using <code>get_app_config</code>.</p>
 <p>The following will retrieve the latest version and store it in the cache.</p>
+<details class="warning" open="open">
+<summary>Warning</summary>
+<p>We make two API calls to fetch each unique configuration name during the first time. This is by design in AppConfig. Please consider adjusting <code>max_age</code> parameter to enhance performance.</p>
+</details>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">getting_started_appconfig.py</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3919,7 +3923,7 @@ object named <code>get_parameter_mock</code>.</p>
   <small>
     
       Last update:
-      2023-04-14
+      2023-06-05
     
   </small>
 </div>

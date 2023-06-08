@@ -19,18 +19,18 @@
         <link rel="next" href="../metrics/">
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.15">
     
     
       
-        <title>Logger - AWS Lambda Powertools for Python</title>
+        <title>Logger - Powertools for AWS Lambda (Python)</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -109,7 +109,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="AWS Lambda Powertools for Python" class="md-header__button md-logo" aria-label="AWS Lambda Powertools for Python" data-md-component="logo">
+    <a href="../.." title="Powertools for AWS Lambda (Python)" class="md-header__button md-logo" aria-label="Powertools for AWS Lambda (Python)" data-md-component="logo">
       
   <img src="../../media/aws-logo-light.svg" alt="logo">
 
@@ -121,7 +121,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AWS Lambda Powertools for Python
+            Powertools for AWS Lambda (Python)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -232,12 +232,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="AWS Lambda Powertools for Python" class="md-nav__button md-logo" aria-label="AWS Lambda Powertools for Python" data-md-component="logo">
+    <a href="../.." title="Powertools for AWS Lambda (Python)" class="md-nav__button md-logo" aria-label="Powertools for AWS Lambda (Python)" data-md-component="logo">
       
   <img src="../../media/aws-logo-light.svg" alt="logo">
 
     </a>
-    AWS Lambda Powertools for Python
+    Powertools for AWS Lambda (Python)
   </label>
   
     <div class="md-nav__source">
@@ -780,8 +780,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-can-i-enable-powertools-logging-for-imported-libraries" class="md-nav__link">
-    How can I enable Powertools logging for imported libraries?
+  <a href="#how-can-i-enable-powertools-for-aws-lambda-python-logging-for-imported-libraries" class="md-nav__link">
+    How can I enable Powertools for AWS Lambda (Python) logging for imported libraries?
   </a>
   
 </li>
@@ -801,8 +801,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-do-i-aggregate-and-search-powertools-logs-across-accounts" class="md-nav__link">
-    How do I aggregate and search Powertools logs across accounts?
+  <a href="#how-do-i-aggregate-and-search-powertools-for-aws-lambda-python-logs-across-accounts" class="md-nav__link">
+    How do I aggregate and search Powertools for AWS Lambda (Python) logs across accounts?
   </a>
   
 </li>
@@ -1497,8 +1497,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-can-i-enable-powertools-logging-for-imported-libraries" class="md-nav__link">
-    How can I enable Powertools logging for imported libraries?
+  <a href="#how-can-i-enable-powertools-for-aws-lambda-python-logging-for-imported-libraries" class="md-nav__link">
+    How can I enable Powertools for AWS Lambda (Python) logging for imported libraries?
   </a>
   
 </li>
@@ -1518,8 +1518,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-do-i-aggregate-and-search-powertools-logs-across-accounts" class="md-nav__link">
-    How do I aggregate and search Powertools logs across accounts?
+  <a href="#how-do-i-aggregate-and-search-powertools-for-aws-lambda-python-logs-across-accounts" class="md-nav__link">
+    How do I aggregate and search Powertools for AWS Lambda (Python) logs across accounts?
   </a>
   
 </li>
@@ -1612,7 +1612,7 @@
 <span class="normal">23</span>
 <span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">AWSTemplateFormatVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2010-09-09&quot;</span>
 <span class="nt">Transform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::Serverless-2016-10-31</span>
-<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS Lambda Powertools Tracer doc examples</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Powertools for AWS Lambda (Python) version</span>
 
 <span class="nt">Globals</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">Function</span><span class="p">:</span>
@@ -1626,7 +1626,7 @@
 </span><span class="w">    </span><span class="nt">Layers</span><span class="p">:</span>
 <span class="w">      </span><span class="c1"># Find the latest Layer version in the official documentation</span>
 <span class="w">      </span><span class="c1"># https://awslabs.github.io/aws-lambda-powertools-python/latest/#lambda-layer</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!Sub</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:lambda:${AWS::Region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:32</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!Sub</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:lambda:${AWS::Region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:34</span>
 
 <span class="nt">Resources</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">LoggerLambdaHandlerExample</span><span class="p">:</span>
@@ -2910,7 +2910,7 @@
 <summary>Info</summary>
 <p>When <code>POWERTOOLS_DEV</code> env var is present and set to <code>"true"</code>, Logger's default serializer (<code>json.dumps</code>) will pretty-print log messages for easier readability.</p>
 </details>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Pre-configuring Lambda Powertools Formatter</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Pre-configuring Powertools for AWS Lambda (Python) Formatter</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -3428,7 +3428,7 @@
 <p>For exceptional cases where you want to completely replace our formatter logic, you can subclass <code>BasePowertoolsFormatter</code>.</p>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>You will need to implement <code>append_keys</code>, <code>clear_state</code>, override <code>format</code>, and optionally <code>remove_keys</code> to keep the same feature set Powertools Logger provides. This also means keeping state of logging keys added.</p>
+<p>You will need to implement <code>append_keys</code>, <code>clear_state</code>, override <code>format</code>, and optionally <code>remove_keys</code> to keep the same feature set Powertools for AWS Lambda (Python) Logger provides. This also means keeping state of logging keys added.</p>
 </details>
 <div class="tabbed-set tabbed-alternate" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><div class="tabbed-labels"><label for="__tabbed_22_1">bring_your_own_formatter_from_scratch.py</label><label for="__tabbed_22_2">bring_your_own_formatter_from_scratch_output.json</label></div>
 <div class="tabbed-content">
@@ -3710,7 +3710,7 @@ for the given name and level to the logging module. By default, this logs all bo
 
     <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Buckets&quot;</span><span class="p">,</span> <span class="p">[])</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="how-can-i-enable-powertools-logging-for-imported-libraries">How can I enable Powertools logging for imported libraries?<a class="headerlink" href="#how-can-i-enable-powertools-logging-for-imported-libraries" title="Permanent link">&para;</a></h3>
+<h3 id="how-can-i-enable-powertools-for-aws-lambda-python-logging-for-imported-libraries">How can I enable Powertools for AWS Lambda (Python) logging for imported libraries?<a class="headerlink" href="#how-can-i-enable-powertools-for-aws-lambda-python-logging-for-imported-libraries" title="Permanent link">&para;</a></h3>
 <p>You can copy the Logger setup to all or sub-sets of registered external loggers. Use the <code>copy_config_to_registered_logger</code> method to do this.</p>
 <details class="tip" open="open">
 <summary>Tip</summary>
@@ -3740,7 +3740,7 @@ for the given name and level to the logging module. By default, this logs all bo
 </span><span class="n">external_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;test message&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="how-can-i-add-standard-library-logging-attributes-to-a-log-record">How can I add standard library logging attributes to a log record?<a class="headerlink" href="#how-can-i-add-standard-library-logging-attributes-to-a-log-record" title="Permanent link">&para;</a></h3>
-<p>The Python standard library log records contains a <a href="https://docs.python.org/3/library/logging.html#logrecord-attributes" target="_blank">large set of attributes</a>, however only a few are included in Powertools Logger log record by default.</p>
+<p>The Python standard library log records contains a <a href="https://docs.python.org/3/library/logging.html#logrecord-attributes" target="_blank">large set of attributes</a>, however only a few are included in Powertools for AWS Lambda (Python) Logger log record by default.</p>
 <p>You can include any of these logging attributes as key value arguments (<code>kwargs</code>) when instantiating <code>Logger</code> or <code>LambdaPowertoolsFormatter</code>.</p>
 <p>You can also add them later anywhere in your code with <code>append_keys</code>, or remove them with <code>remove_keys</code> methods.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><div class="tabbed-labels"><label for="__tabbed_24_1">append_and_remove_keys.py</label><label for="__tabbed_24_2">append_and_remove_keys_output.json</label></div>
@@ -3815,7 +3815,7 @@ for the given name and level to the logging module. By default, this logs all bo
 </div>
 </div>
 </div>
-<p>For log records originating from Powertools Logger, the <code>name</code> attribute will be the same as <code>service</code>, for log records coming from standard library logger, it will be the name of the logger (i.e. what was used as name argument to <code>logging.getLogger</code>).</p>
+<p>For log records originating from Powertools for AWS Lambda (Python) Logger, the <code>name</code> attribute will be the same as <code>service</code>, for log records coming from standard library logger, it will be the name of the logger (i.e. what was used as name argument to <code>logging.getLogger</code>).</p>
 <h3 id="whats-the-difference-between-append_keys-and-extra">What's the difference between <code>append_keys</code> and <code>extra</code>?<a class="headerlink" href="#whats-the-difference-between-append_keys-and-extra" title="Permanent link">&para;</a></h3>
 <p>Keys added with <code>append_keys</code> will persist across multiple log messages while keys added via <code>extra</code> will only be available in a given log message operation.</p>
 <p>Here's an example where we persist <code>payment_id</code> not <code>request_id</code>. Note that <code>payment_id</code> remains in both log messages while <code>booking_id</code> is only available in the first message.</p>
@@ -3925,7 +3925,8 @@ for the given name and level to the logging module. By default, this logs all bo
 </div>
 </div>
 </div>
-<h3 id="how-do-i-aggregate-and-search-powertools-logs-across-accounts">How do I aggregate and search Powertools logs across accounts?<a class="headerlink" href="#how-do-i-aggregate-and-search-powertools-logs-across-accounts" title="Permanent link">&para;</a></h3>
+<!-- markdownlint-disable MD013 -->
+<h3 id="how-do-i-aggregate-and-search-powertools-for-aws-lambda-python-logs-across-accounts">How do I aggregate and search Powertools for AWS Lambda (Python) logs across accounts?<a class="headerlink" href="#how-do-i-aggregate-and-search-powertools-for-aws-lambda-python-logs-across-accounts" title="Permanent link">&para;</a></h3>
 <p>As of now, ElasticSearch (ELK) or 3rd party solutions are best suited to this task. Please refer to this <a href="https://github.com/awslabs/aws-lambda-powertools-python/issues/460">discussion for more details</a></p>
 
   <hr>
@@ -3933,7 +3934,7 @@ for the given name and level to the logging module. By default, this logs all bo
   <small>
     
       Last update:
-      2023-05-01
+      2023-06-01
     
   </small>
 </div>

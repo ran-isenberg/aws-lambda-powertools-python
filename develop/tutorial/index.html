@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Powertools introduction">
+        <meta name="description" content="Powertools for AWS Lambda (Python) introduction">
       
       
         <meta name="author" content="Amazon Web Services">
@@ -19,18 +19,18 @@
         <link rel="next" href="../roadmap/">
       
       <link rel="icon" href="../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.15">
     
     
       
-        <title>Tutorial - AWS Lambda Powertools for Python</title>
+        <title>Tutorial - Powertools for AWS Lambda (Python)</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -109,7 +109,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="AWS Lambda Powertools for Python" class="md-header__button md-logo" aria-label="AWS Lambda Powertools for Python" data-md-component="logo">
+    <a href=".." title="Powertools for AWS Lambda (Python)" class="md-header__button md-logo" aria-label="Powertools for AWS Lambda (Python)" data-md-component="logo">
       
   <img src="../media/aws-logo-light.svg" alt="logo">
 
@@ -121,7 +121,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AWS Lambda Powertools for Python
+            Powertools for AWS Lambda (Python)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -232,12 +232,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="AWS Lambda Powertools for Python" class="md-nav__button md-logo" aria-label="AWS Lambda Powertools for Python" data-md-component="logo">
+    <a href=".." title="Powertools for AWS Lambda (Python)" class="md-nav__button md-logo" aria-label="Powertools for AWS Lambda (Python)" data-md-component="logo">
       
   <img src="../media/aws-logo-light.svg" alt="logo">
 
     </a>
-    AWS Lambda Powertools for Python
+    Powertools for AWS Lambda (Python)
   </label>
   
     <div class="md-nav__source">
@@ -1209,7 +1209,7 @@
 
 <!-- markdownlint-disable MD043 MD041 -->
 
-<p>This tutorial progressively introduces Lambda Powertools core utilities by using one feature at a time.</p>
+<p>This tutorial progressively introduces Powertools for AWS Lambda (Python) core utilities by using one feature at a time.</p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html" target="_blank">AWS CLI</a> and <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-set-up-credentials.html" target="_blank">configured with your credentials</a>.</li>
@@ -1656,7 +1656,7 @@ Successfully<span class="w"> </span>created/updated<span class="w"> </span>stack
 <summary>Tip</summary>
 <p>This is available for both <a href="../core/event_handler/api_gateway/" target="_blank">REST API (API Gateway, ALB)</a> and <a href="../core/event_handler/appsync/" target="_blank">GraphQL API (AppSync)</a>.</p>
 </details>
-<p>Let's include Lambda Powertools as a dependency in <code>requirement.txt</code>, and use Event Handler to refactor our previous example.</p>
+<p>Let's include Powertools for AWS Lambda (Python) as a dependency in <code>requirement.txt</code>, and use Event Handler to refactor our previous example.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">app.py</label><label for="__tabbed_4_2">requirements.txt</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1827,10 +1827,10 @@ python-json-logger
 <h3 id="simplifying-with-logger">Simplifying with Logger<a class="headerlink" href="#simplifying-with-logger" title="Permanent link">&para;</a></h3>
 <details class="question" open="open">
 <summary>Surely this could be easier, right?</summary>
-<p>Yes! Powertools Logger to the rescue :-)</p>
+<p>Yes! Powertools for AWS Lambda (Python) Logger to the rescue :-)</p>
 </details>
-<p>As we already have Lambda Powertools as a dependency, we can simply import <a href="../core/logger/" target="_blank">Logger</a>.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Refactoring with Lambda Powertools Logger</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<p>As we already have Powertools for AWS Lambda (Python) as a dependency, we can simply import <a href="../core/logger/" target="_blank">Logger</a>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Refactoring with Powertools for AWS Lambda (Python) Logger</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1880,7 +1880,7 @@ python-json-logger
 </code></pre></div></td></tr></table></div>
 <p>Let's break this down:</p>
 <ul>
-<li><strong>L5</strong>: We add Lambda Powertools Logger; the boilerplate is now done for you. By default, we set <code>INFO</code> as the logging level if <code>LOG_LEVEL</code> env var isn't set.</li>
+<li><strong>L5</strong>: We add Powertools for AWS Lambda (Python) Logger; the boilerplate is now done for you. By default, we set <code>INFO</code> as the logging level if <code>LOG_LEVEL</code> env var isn't set.</li>
 <li><strong>L22</strong>: We use <code>logger.inject_lambda_context</code> decorator to inject key information from Lambda context into every log.</li>
 <li><strong>L22</strong>: We also instruct Logger to use the incoming API Gateway Request ID as a <a href="../core/logger/##set_correlation_id-method">correlation id</a> automatically.</li>
 <li><strong>L22</strong>: Since we're in dev, we also use <code>log_event=True</code> to automatically log each incoming request for debugging. This can be also set via <a href="./#environment-variables" target="_blank">environment variables</a>.</li>
@@ -1935,7 +1935,7 @@ python-json-logger
 <li>Enable tracing in your Lambda function.</li>
 <li>Instrument your application code.</li>
 </ol>
-<p>Let's explore how we can instrument our code with <a href="https://docs.aws.amazon.com/xray-sdk-for-python/latest/reference/index.html" target="_blank">AWS X-Ray SDK</a>, and then simplify it with <a href="../core/tracer/" target="_blank">Lambda Powertools Tracer</a> feature.</p>
+<p>Let's explore how we can instrument our code with <a href="https://docs.aws.amazon.com/xray-sdk-for-python/latest/reference/index.html" target="_blank">AWS X-Ray SDK</a>, and then simplify it with <a href="../core/tracer/" target="_blank">Powertools for AWS Lambda (Python) Tracer</a> feature.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">app.py</label><label for="__tabbed_8_2">template.yaml</label><label for="__tabbed_8_3">requirements.txt</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2215,12 +2215,12 @@ aws-xray-sdk
 <p><img alt="Filtering traces by metadata" src="../media/tracer_xray_sdk_enriched_2.png" /></p>
 <h3 id="simplifying-with-tracer">Simplifying with Tracer<a class="headerlink" href="#simplifying-with-tracer" title="Permanent link">&para;</a></h3>
 <p>Cross-cutting concerns like filtering traces by Cold Start, including response as well as exceptions as tracing metadata can take a considerable amount of boilerplate.</p>
-<p>We can simplify our previous patterns by using <a href="../core/tracer/" target="_blank">Lambda Powertools Tracer</a>; a thin wrapper on top of X-Ray SDK.</p>
+<p>We can simplify our previous patterns by using <a href="../core/tracer/" target="_blank">Powertools for AWS Lambda (Python) Tracer</a>; a thin wrapper on top of X-Ray SDK.</p>
 <details class="note" open="open">
 <summary>Note</summary>
 <p>You can now safely remove <code>aws-xray-sdk</code> from <code>requirements.txt</code>; keep <code>aws-lambda-powertools</code> only.</p>
 </details>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Refactoring with Lambda Powertools Tracer</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Refactoring with Powertools for AWS Lambda (Python) Tracer</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2286,13 +2286,13 @@ aws-xray-sdk
 <li><strong>L27</strong>: We use <code>@tracer.lambda_handler</code> so we automatically add <code>ColdStart</code> annotation within Tracer itself. We also add a new <code>Service</code> annotation using the value of <code>Tracer(service="APP")</code>, so that you can filter traces by the service your function(s) represent.</li>
 </ul>
 <p>Another subtle difference is that you can now run your Lambda functions and unit test them locally without having to explicitly disable Tracer.</p>
-<p>Lambda Powertools optimizes for Lambda compute environment. As such, we add these and other common approaches to accelerate your development, so you don't worry about implementing every cross-cutting concern.</p>
+<p>Powertools for AWS Lambda (Python) optimizes for Lambda compute environment. As such, we add these and other common approaches to accelerate your development, so you don't worry about implementing every cross-cutting concern.</p>
 <details class="tip" open="open">
 <summary>Tip</summary>
 <p>You can <a href="../core/tracer/#advanced" target="_blank">opt-out some of these behaviours</a> like disabling response capturing,  explicitly patching only X modules, etc.</p>
 </details>
 <p>Repeat the process of building, deploying, and invoking your application via the API endpoint. Within the <a href="https://console.aws.amazon.com/xray/home#/traces/" target="_blank">AWS X-Ray Console</a>, you should see a similar view:</p>
-<p><img alt="AWS X-Ray Console trace view using Lambda Powertools Tracer" src="../media/tracer_utility_showcase_2.png" /></p>
+<p><img alt="AWS X-Ray Console trace view using Powertools for AWS Lambda (Python) Tracer" src="../media/tracer_utility_showcase_2.png" /></p>
 <details class="tip" open="open">
 <summary>Tip</summary>
 <p>Consider using <a href="https://console.aws.amazon.com/cloudwatch/home#servicelens:service-map/map" target="_blank">Amazon CloudWatch ServiceLens view</a> as it aggregates AWS X-Ray traces and CloudWatch metrics and logs in one view.</p>
@@ -2311,7 +2311,7 @@ aws-xray-sdk
 <summary>Tip</summary>
 <p>You can <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html#api-gateway-metricdimensions" target="_blank">optionally enable detailed metrics</a> per each API route, stage, and method in API Gateway.</p>
 </details>
-<p>Let's expand our application with custom metrics using AWS SDK to see how it works, then let's upgrade it with Lambda Powertools :-)</p>
+<p>Let's expand our application with custom metrics using AWS SDK to see how it works, then let's upgrade it with Powertools for AWS Lambda (Python) :-)</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">app.py</label><label for="__tabbed_9_2">template.yaml</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2545,14 +2545,14 @@ aws-xray-sdk
 <p>It will be visible in your AWS X-RAY traces as additional external call. Given your architecture scale, this approach might lead to disadvantages such as increased cost of measuring data collection and increased Lambda latency.</p>
 </details>
 <h3 id="simplifying-with-metrics">Simplifying with Metrics<a class="headerlink" href="#simplifying-with-metrics" title="Permanent link">&para;</a></h3>
-<p><a href="../core/metrics/" target="&quot;_blank">Lambda Powertools Metrics</a> uses <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Embedded_Metric_Format.html">Amazon CloudWatch Embedded Metric Format (EMF)</a> to create custom metrics <strong>asynchronously</strong> via a native integration with Lambda.</p>
+<p><a href="../core/metrics/" target="&quot;_blank">Powertools for AWS Lambda (Python) Metrics</a> uses <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Embedded_Metric_Format.html">Amazon CloudWatch Embedded Metric Format (EMF)</a> to create custom metrics <strong>asynchronously</strong> via a native integration with Lambda.</p>
 <p>In general terms, EMF is a specification that expects metrics in a JSON payload within CloudWatch Logs. Lambda ingests all logs emitted by a given function into CloudWatch Logs. CloudWatch automatically looks up for log entries that follow the EMF format and transforms them into a CloudWatch metric.</p>
 <details class="info" open="open">
 <summary>Info</summary>
 <p>If you are interested in the details of the EMF mechanism, follow <a href="https://aws.amazon.com/blogs/mt/enhancing-workload-observability-using-amazon-cloudwatch-embedded-metric-format/" target="_blank">blog post</a>.</p>
 </details>
 <p>Let's implement that using <a href="../core/metrics/" target="&quot;_blank">Metrics</a>:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Refactoring with Lambda Powertools Metrics</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Refactoring with Powertools for AWS Lambda (Python) Metrics</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2696,13 +2696,13 @@ aws-xray-sdk
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="final-considerations">Final considerations<a class="headerlink" href="#final-considerations" title="Permanent link">&para;</a></h2>
-<p>We covered a lot of ground here and we only scratched the surface of the feature set available within Lambda Powertools.</p>
+<p>We covered a lot of ground here and we only scratched the surface of the feature set available within Powertools for AWS Lambda (Python).</p>
 <p>When it comes to the observability features (<a href="../core/tracer/" target="_blank">Tracer</a>, <a href="../core/metrics/" target="_blank">Metrics</a>, <a href="../core/logger/" target="_blank">Logging</a>), don't stop there! The goal here is to ensure you can ask arbitrary questions to assess your system's health; these features are only part of the wider story!</p>
 <p>This requires a change in mindset to ensure operational excellence is part of the software development lifecycle.</p>
 <details class="tip" open="open">
 <summary>Tip</summary>
 <p>You can find more details on other leading practices described in the <a href="https://aws.amazon.com/blogs/aws/new-serverless-lens-in-aws-well-architected-tool/">Well-Architected Serverless Lens</a>.</p>
-<p>Lambda Powertools is largely designed to make some of these practices easier to adopt from day 1.</p>
+<p>Powertools for AWS Lambda (Python) is largely designed to make some of these practices easier to adopt from day 1.</p>
 </details>
 <details class="question" open="open">
 <summary>Have ideas for other tutorials?</summary>
@@ -2714,7 +2714,7 @@ aws-xray-sdk
   <small>
     
       Last update:
-      2023-04-26
+      2023-05-31
     
   </small>
 </div>

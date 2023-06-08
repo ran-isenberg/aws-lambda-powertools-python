@@ -19,18 +19,18 @@
         <link rel="next" href="../feature_flags/">
       
       <link rel="icon" href="../../media/aws-logo-light.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.15">
     
     
       
-        <title>Idempotency - AWS Lambda Powertools for Python</title>
+        <title>Idempotency - Powertools for AWS Lambda (Python)</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -109,7 +109,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="AWS Lambda Powertools for Python" class="md-header__button md-logo" aria-label="AWS Lambda Powertools for Python" data-md-component="logo">
+    <a href="../.." title="Powertools for AWS Lambda (Python)" class="md-header__button md-logo" aria-label="Powertools for AWS Lambda (Python)" data-md-component="logo">
       
   <img src="../../media/aws-logo-light.svg" alt="logo">
 
@@ -121,7 +121,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AWS Lambda Powertools for Python
+            Powertools for AWS Lambda (Python)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -232,12 +232,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="AWS Lambda Powertools for Python" class="md-nav__button md-logo" aria-label="AWS Lambda Powertools for Python" data-md-component="logo">
+    <a href="../.." title="Powertools for AWS Lambda (Python)" class="md-nav__button md-logo" aria-label="Powertools for AWS Lambda (Python)" data-md-component="logo">
       
   <img src="../../media/aws-logo-light.svg" alt="logo">
 
     </a>
-    AWS Lambda Powertools for Python
+    Powertools for AWS Lambda (Python)
   </label>
   
     <div class="md-nav__source">
@@ -2041,7 +2041,7 @@ estimate the cost.</p>
 <summary>Note</summary>
 <p>This is automatically done when you decorate your Lambda handler with <a href="#idempotent-decorator">@idempotent decorator</a>.</p>
 </details>
-<p>To prevent against extended failed retries when a <a href="https://aws.amazon.com/premiumsupport/knowledge-center/lambda-verify-invocation-timeouts/">Lambda function times out</a>, Powertools calculates and includes the remaining invocation available time as part of the idempotency record.</p>
+<p>To prevent against extended failed retries when a <a href="https://aws.amazon.com/premiumsupport/knowledge-center/lambda-verify-invocation-timeouts/">Lambda function times out</a>, Powertools for AWS Lambda (Python) calculates and includes the remaining invocation available time as part of the idempotency record.</p>
 <details class="example" open="open">
 <summary>Example</summary>
 <p>If a second invocation happens <strong>after</strong> this timestamp, and the record is marked as <code>INPROGRESS</code>, we will execute the invocation again as if it was in the <code>EXPIRED</code> state (e.g, <code>expire_seconds</code> field elapsed).</p>
@@ -3125,7 +3125,7 @@ event - not the "raw" event Lambda was invoked with.</p>
     <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">],</span> <span class="s2">&quot;statusCode&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <details class="tip" open="open">
-<summary>Tip: JMESPath Powertools functions are also available</summary>
+<summary>Tip: JMESPath Powertools for AWS Lambda (Python) functions are also available</summary>
 <p>Built-in functions known in the validation utility like <code>powertools_json</code>, <code>powertools_base64</code>, <code>powertools_base64_gzip</code> are also available to use in this utility.</p>
 </details>
 <h2 id="testing-your-code">Testing your code<a class="headerlink" href="#testing-your-code" title="Permanent link">&para;</a></h2>
@@ -3435,7 +3435,7 @@ This means it is possible to pass a mocked Table resource, or stub various metho
   <small>
     
       Last update:
-      2023-04-05
+      2023-05-31
     
   </small>
 </div>
