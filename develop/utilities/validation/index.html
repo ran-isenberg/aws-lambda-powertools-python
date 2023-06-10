@@ -1409,7 +1409,7 @@
 </div>
 <h3 id="unwrapping-events-prior-to-validation">Unwrapping events prior to validation<a class="headerlink" href="#unwrapping-events-prior-to-validation" title="Permanent link">&para;</a></h3>
 <p>You might want to validate only a portion of your event - This is what the <code>envelope</code> parameter is for.</p>
-<p>Envelopes are <a href="https://jmespath.org/tutorial.html">JMESPath expressions</a> to extract a portion of JSON you want before applying JSON Schema validation.</p>
+<p>Envelopes are <a href="https://jmespath.org/tutorial.html" target="_blank">JMESPath expressions</a> to extract a portion of JSON you want before applying JSON Schema validation.</p>
 <p>Here is a sample custom EventBridge event, where we only validate what's inside the <code>detail</code> key:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">getting_started_validator_unwrapping_function.py</label><label for="__tabbed_3_2">getting_started_validator_unwrapping_schema.py</label><label for="__tabbed_3_3">getting_started_validator_unwrapping_payload.json</label></div>
 <div class="tabbed-content">
@@ -1649,7 +1649,7 @@
 </div>
 </div>
 </div>
-<p>This is quite powerful because you can use JMESPath Query language to extract records from <a href="https://jmespath.org/tutorial.html#list-and-slice-projections">arrays</a>, combine <a href="https://jmespath.org/tutorial.html#pipe-expressions">pipe</a> and <a href="https://jmespath.org/tutorial.html#functions">function expressions</a>.</p>
+<p>This is quite powerful because you can use JMESPath Query language to extract records from <a href="https://jmespath.org/tutorial.html#list-and-slice-projections" target="_blank">arrays</a>, combine <a href="https://jmespath.org/tutorial.html#pipe-expressions" target="_blank">pipe</a> and <a href="https://jmespath.org/tutorial.html#functions" target="_blank">function expressions</a>.</p>
 <p>When combined, these features allow you to extract what you need before validating the actual payload.</p>
 <h3 id="built-in-envelopes">Built-in envelopes<a class="headerlink" href="#built-in-envelopes" title="Permanent link">&para;</a></h3>
 <p>We provide built-in envelopes to easily extract the payload from popular event sources.</p>
@@ -2000,7 +2000,7 @@
 </div>
 <h3 id="built-in-jmespath-functions">Built-in JMESPath functions<a class="headerlink" href="#built-in-jmespath-functions" title="Permanent link">&para;</a></h3>
 <p>You might have events or responses that contain non-encoded JSON, where you need to decode before validating them.</p>
-<p>You can use our built-in <a href="../jmespath_functions/">JMESPath functions</a> within your expressions to do exactly that to <a href="../jmespath_functions/#powertools_json-function">deserialize JSON Strings</a>, <a href="../jmespath_functions/#powertools_base64-function">decode base64</a>, and <a href="../jmespath_functions/#powertools_base64_gzip-function">decompress gzip data</a>.</p>
+<p>You can use our built-in <a href="../jmespath_functions/" target="_blank">JMESPath functions</a> within your expressions to do exactly that to <a href="../jmespath_functions/#powertools_json-function" target="_blank">deserialize JSON Strings</a>, <a href="../jmespath_functions/#powertools_base64-function" target="_blank">decode base64</a>, and <a href="../jmespath_functions/#powertools_base64_gzip-function" target="_blank">decompress gzip data</a>.</p>
 <details class="info" open="open">
 <summary>Info</summary>
 <p>We use these for <a href="#built-in-envelopes">built-in envelopes</a> to easily to decode and unwrap events from sources like Kinesis, CloudWatch Logs, etc.</p>
@@ -2011,7 +2011,7 @@
   <small>
     
       Last update:
-      2023-05-31
+      2023-06-08
     
   </small>
 </div>

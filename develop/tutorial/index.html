@@ -1333,7 +1333,7 @@
 </code></pre></div></td></tr></table></div>
 <details class="info" open="open">
 <summary>Info</summary>
-<p>To learn more about local testing, please visit the <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-local-start-api.html">AWS SAM CLI local testing</a> documentation.</p>
+<p>To learn more about local testing, please visit the <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-local-start-api.html" target="_blank">AWS SAM CLI local testing</a> documentation.</p>
 </details>
 <h4 id="live-test">Live test<a class="headerlink" href="#live-test" title="Permanent link">&para;</a></h4>
 <p>First, you need to deploy your application into your AWS Account by issuing <code>sam build &amp;&amp; sam deploy --guided</code> command. This command builds a ZIP package of your source code, and deploy it to your AWS Account.</p>
@@ -1382,7 +1382,7 @@ Successfully<span class="w"> </span>created/updated<span class="w"> </span>stack
 </code></pre></div></td></tr></table></div>
 <details class="info" open="open">
 <summary>Info</summary>
-<p>For more details on AWS SAM deployment mechanism, see <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-deploy.html">SAM Deploy reference docs</a>.</p>
+<p>For more details on AWS SAM deployment mechanism, see <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-deploy.html" target="_blank">SAM Deploy reference docs</a>.</p>
 </details>
 <h2 id="routing">Routing<a class="headerlink" href="#routing" title="Permanent link">&para;</a></h2>
 <h3 id="adding-a-new-route">Adding a new route<a class="headerlink" href="#adding-a-new-route" title="Permanent link">&para;</a></h3>
@@ -1711,11 +1711,11 @@ Successfully<span class="w"> </span>created/updated<span class="w"> </span>stack
 <p>From here, we could handle <a href="../core/event_handler/api_gateway/#handling-not-found-routes" target="_blank">404 routes</a>, <a href="../core/event_handler/api_gateway/#exception-handling" target="_blank">error handling</a>, <a href="../core/event_handler/api_gateway/#accessing-request-details" target="_blank">access query strings, payload</a>, etc.</p>
 <details class="tip" open="open">
 <summary>Tip</summary>
-<p>If you'd like to learn how python decorators work under the hood, you can follow <a href="https://realpython.com/primer-on-python-decorators/">Real Python</a>'s article.</p>
+<p>If you'd like to learn how python decorators work under the hood, you can follow <a href="https://realpython.com/primer-on-python-decorators/" target="_blank">Real Python</a>'s article.</p>
 </details>
 <h2 id="structured-logging">Structured Logging<a class="headerlink" href="#structured-logging" title="Permanent link">&para;</a></h2>
 <p>Over time, you realize that searching logs as text results in poor observability, it's hard to create metrics from, enumerate common exceptions, etc.</p>
-<p>Then, you decided to propose production quality logging capabilities to your Lambda code. You found out that by having logs as <code>JSON</code> you can <a href="https://docs.aws.amazon.com/lambda/latest/operatorguide/parse-logs.html">structure them</a>, so that you can use any Log Analytics tool out there to quickly analyze them.</p>
+<p>Then, you decided to propose production quality logging capabilities to your Lambda code. You found out that by having logs as <code>JSON</code> you can <a href="https://docs.aws.amazon.com/lambda/latest/operatorguide/parse-logs.html" target="_blank">structure them</a>, so that you can use any Log Analytics tool out there to quickly analyze them.</p>
 <p>This helps not only in searching, but produces consistent logs containing enough context and data to ask arbitrary questions on the status of your system. We can take advantage of CloudWatch Logs and Cloudwatch Insight for this purpose.</p>
 <h3 id="json-as-output">JSON as output<a class="headerlink" href="#json-as-output" title="Permanent link">&para;</a></h3>
 <p>The first option could be to use the standard Python Logger, and use a specialized library like <code>pythonjsonlogger</code> to create a JSON Formatter.</p>
@@ -1882,7 +1882,7 @@ python-json-logger
 <ul>
 <li><strong>L5</strong>: We add Powertools for AWS Lambda (Python) Logger; the boilerplate is now done for you. By default, we set <code>INFO</code> as the logging level if <code>LOG_LEVEL</code> env var isn't set.</li>
 <li><strong>L22</strong>: We use <code>logger.inject_lambda_context</code> decorator to inject key information from Lambda context into every log.</li>
-<li><strong>L22</strong>: We also instruct Logger to use the incoming API Gateway Request ID as a <a href="../core/logger/##set_correlation_id-method">correlation id</a> automatically.</li>
+<li><strong>L22</strong>: We also instruct Logger to use the incoming API Gateway Request ID as a <a href="../core/logger/##set_correlation_id-method" target="_blank">correlation id</a> automatically.</li>
 <li><strong>L22</strong>: Since we're in dev, we also use <code>log_event=True</code> to automatically log each incoming request for debugging. This can be also set via <a href="./#environment-variables" target="_blank">environment variables</a>.</li>
 </ul>
 <p>This is how the logs would look like now:</p>
@@ -2206,7 +2206,7 @@ aws-xray-sdk
 </ul>
 <details class="info" open="open">
 <summary>Info</summary>
-<p>If you want to understand how the Lambda execution environment (sandbox) works and why cold starts can occur, see this <a href="https://aws.amazon.com/blogs/compute/operating-lambda-performance-optimization-part-1/">blog series on Lambda performance</a>.</p>
+<p>If you want to understand how the Lambda execution environment (sandbox) works and why cold starts can occur, see this <a href="https://aws.amazon.com/blogs/compute/operating-lambda-performance-optimization-part-1/" target="_blank">blog series on Lambda performance</a>.</p>
 </details>
 <p>Repeat the process of building, deploying, and invoking your application via the API endpoint.</p>
 <p>Within the <a href="https://console.aws.amazon.com/xray/home#/traces/" target="_blank">AWS X-Ray Console</a>, you should now be able to group traces by the <code>User</code> and <code>ColdStart</code> annotation.</p>
@@ -2301,12 +2301,12 @@ aws-xray-sdk
 <p><img alt="CloudWatch ServiceLens View" src="../media/tracer_utility_showcase_3.png" /></p>
 <details class="info" open="open">
 <summary>Info</summary>
-<p>For more information on Amazon CloudWatch ServiceLens, please visit <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ServiceLens.html">link</a>.</p>
+<p>For more information on Amazon CloudWatch ServiceLens, please visit <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ServiceLens.html" target="_blank">link</a>.</p>
 </details>
 <h2 id="custom-metrics">Custom Metrics<a class="headerlink" href="#custom-metrics" title="Permanent link">&para;</a></h2>
 <h3 id="creating-metrics">Creating metrics<a class="headerlink" href="#creating-metrics" title="Permanent link">&para;</a></h3>
 <p>Let's add custom metrics to better understand our application and business behavior (e.g. number of reservations, etc.).</p>
-<p>By default, AWS Lambda adds <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics.html#monitoring-metrics-types" target="_blank">invocation and performance metrics</a>, and Amazon API Gateway adds <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html#api-gateway-metrics">latency and some HTTP metrics</a>.</p>
+<p>By default, AWS Lambda adds <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics.html#monitoring-metrics-types" target="_blank">invocation and performance metrics</a>, and Amazon API Gateway adds <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html#api-gateway-metrics" target="_blank">latency and some HTTP metrics</a>.</p>
 <details class="tip" open="open">
 <summary>Tip</summary>
 <p>You can <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html#api-gateway-metricdimensions" target="_blank">optionally enable detailed metrics</a> per each API route, stage, and method in API Gateway.</p>
@@ -2545,7 +2545,7 @@ aws-xray-sdk
 <p>It will be visible in your AWS X-RAY traces as additional external call. Given your architecture scale, this approach might lead to disadvantages such as increased cost of measuring data collection and increased Lambda latency.</p>
 </details>
 <h3 id="simplifying-with-metrics">Simplifying with Metrics<a class="headerlink" href="#simplifying-with-metrics" title="Permanent link">&para;</a></h3>
-<p><a href="../core/metrics/" target="&quot;_blank">Powertools for AWS Lambda (Python) Metrics</a> uses <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Embedded_Metric_Format.html">Amazon CloudWatch Embedded Metric Format (EMF)</a> to create custom metrics <strong>asynchronously</strong> via a native integration with Lambda.</p>
+<p><a href="../core/metrics/" target="&quot;_blank">Powertools for AWS Lambda (Python) Metrics</a> uses <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Embedded_Metric_Format.html" target="_blank">Amazon CloudWatch Embedded Metric Format (EMF)</a> to create custom metrics <strong>asynchronously</strong> via a native integration with Lambda.</p>
 <p>In general terms, EMF is a specification that expects metrics in a JSON payload within CloudWatch Logs. Lambda ingests all logs emitted by a given function into CloudWatch Logs. CloudWatch automatically looks up for log entries that follow the EMF format and transforms them into a CloudWatch metric.</p>
 <details class="info" open="open">
 <summary>Info</summary>
@@ -2701,7 +2701,7 @@ aws-xray-sdk
 <p>This requires a change in mindset to ensure operational excellence is part of the software development lifecycle.</p>
 <details class="tip" open="open">
 <summary>Tip</summary>
-<p>You can find more details on other leading practices described in the <a href="https://aws.amazon.com/blogs/aws/new-serverless-lens-in-aws-well-architected-tool/">Well-Architected Serverless Lens</a>.</p>
+<p>You can find more details on other leading practices described in the <a href="https://aws.amazon.com/blogs/aws/new-serverless-lens-in-aws-well-architected-tool/" target="_blank">Well-Architected Serverless Lens</a>.</p>
 <p>Powertools for AWS Lambda (Python) is largely designed to make some of these practices easier to adopt from day 1.</p>
 </details>
 <details class="question" open="open">
@@ -2714,7 +2714,7 @@ aws-xray-sdk
   <small>
     
       Last update:
-      2023-05-31
+      2023-06-08
     
   </small>
 </div>

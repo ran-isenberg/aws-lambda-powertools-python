@@ -2017,7 +2017,7 @@ return a 200 OK HTTP status. You can optionally set a different HTTP status code
     <span class="k">return</span> <span class="n">app</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="lambda-function-url">Lambda Function URL<a class="headerlink" href="#lambda-function-url" title="Permanent link">&para;</a></h4>
-<p>When using <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html">AWS Lambda Function URL</a>, you can use <code>LambdaFunctionUrlResolver</code>.</p>
+<p>When using <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html" target="_blank">AWS Lambda Function URL</a>, you can use <code>LambdaFunctionUrlResolver</code>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">getting_started_lambda_function_url_resolver.py</label><label for="__tabbed_3_2">getting_started_lambda_function_url_resolver.json</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2934,7 +2934,7 @@ return a 200 OK HTTP status. You can optionally set a different HTTP status code
 <h3 id="custom-domain-api-mappings">Custom Domain API Mappings<a class="headerlink" href="#custom-domain-api-mappings" title="Permanent link">&para;</a></h3>
 <p>When using <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/rest-api-mappings.html" target="_blank">Custom Domain API Mappings feature</a>, you must use <strong><code>strip_prefixes</code></strong> param in the <code>APIGatewayRestResolver</code> constructor.</p>
 <p><strong>Scenario</strong>: You have a custom domain <code>api.mydomain.dev</code>. Then you set <code>/payment</code> API Mapping to forward any payment requests to your Payments API.</p>
-<p><strong>Challenge</strong>: This means your <code>path</code> value for any API requests will always contain <code>/payment/&lt;actual_request&gt;</code>, leading to HTTP 404 as Event Handler is trying to match what's after <code>payment/</code>. This gets further complicated with an <a href="https://github.com/awslabs/aws-lambda-powertools-roadmap/issues/34">arbitrary level of nesting</a>.</p>
+<p><strong>Challenge</strong>: This means your <code>path</code> value for any API requests will always contain <code>/payment/&lt;actual_request&gt;</code>, leading to HTTP 404 as Event Handler is trying to match what's after <code>payment/</code>. This gets further complicated with an <a href="https://github.com/awslabs/aws-lambda-powertools-roadmap/issues/34" target="_blank">arbitrary level of nesting</a>.</p>
 <p>To address this API Gateway behavior, we use <code>strip_prefixes</code> parameter to account for these prefixes that are now injected into the path regardless of which type of API Gateway you're using.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">custom_api_mapping.py</label><label for="__tabbed_7_2">custom_api_mapping.json</label></div>
 <div class="tabbed-content">
@@ -3303,7 +3303,7 @@ Some event sources require headers and cookies to be encoded as <code>multiValue
 </details>
 <details class="warning" open="open">
 <summary>Using multiple values for HTTP headers in ALB?</summary>
-<p>Make sure you <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/lambda-functions.html#multi-value-headers">enable the multi value headers feature</a> to serialize response headers correctly.</p>
+<p>Make sure you <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/lambda-functions.html#multi-value-headers" target="_blank">enable the multi value headers feature</a> to serialize response headers correctly.</p>
 </details>
 <div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">fine_grained_responses.py</label><label for="__tabbed_9_2">fine_grained_responses_output.json</label></div>
 <div class="tabbed-content">
@@ -3453,11 +3453,26 @@ Some event sources require headers and cookies to be encoded as <code>multiValue
 <span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code> <span class="kn">import</span> <span class="nn">requests</span>
- <span class="kn">from</span> <span class="nn">requests</span> <span class="kn">import</span> <span class="n">Response</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code> <span class="kn">import</span> <span class="nn">requests</span>
 
  <span class="kn">from</span> <span class="nn">aws_lambda_powertools</span> <span class="kn">import</span> <span class="n">Logger</span><span class="p">,</span> <span class="n">Tracer</span>
- <span class="kn">from</span> <span class="nn">aws_lambda_powertools.event_handler</span> <span class="kn">import</span> <span class="n">APIGatewayRestResolver</span>
+ <span class="kn">from</span> <span class="nn">aws_lambda_powertools.event_handler</span> <span class="kn">import</span> <span class="p">(</span>
+     <span class="n">APIGatewayRestResolver</span><span class="p">,</span>
+     <span class="n">Response</span><span class="p">,</span>
+     <span class="n">content_types</span><span class="p">,</span>
+ <span class="p">)</span>
  <span class="kn">from</span> <span class="nn">aws_lambda_powertools.logging</span> <span class="kn">import</span> <span class="n">correlation_paths</span>
  <span class="kn">from</span> <span class="nn">aws_lambda_powertools.utilities.typing</span> <span class="kn">import</span> <span class="n">LambdaContext</span>
 
@@ -3469,11 +3484,20 @@ Some event sources require headers and cookies to be encoded as <code>multiValue
 <span class="hll"> <span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/todos&quot;</span><span class="p">,</span> <span class="n">compress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span> <span class="nd">@tracer</span><span class="o">.</span><span class="n">capture_method</span>
  <span class="k">def</span> <span class="nf">get_todos</span><span class="p">():</span>
-     <span class="n">todos</span><span class="p">:</span> <span class="n">Response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://jsonplaceholder.typicode.com/todos&quot;</span><span class="p">)</span>
+     <span class="n">todos</span><span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://jsonplaceholder.typicode.com/todos&quot;</span><span class="p">)</span>
      <span class="n">todos</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
 
      <span class="c1"># for brevity, we&#39;ll limit to the first 10 only</span>
      <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;todos&quot;</span><span class="p">:</span> <span class="n">todos</span><span class="o">.</span><span class="n">json</span><span class="p">()[:</span><span class="mi">10</span><span class="p">]}</span>
+
+
+<span class="hll"> <span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/todos/&lt;todo_id&gt;&quot;</span><span class="p">,</span> <span class="n">compress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span> <span class="nd">@tracer</span><span class="o">.</span><span class="n">capture_method</span>
+ <span class="k">def</span> <span class="nf">get_todo_by_id</span><span class="p">(</span><span class="n">todo_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># same example using Response class</span>
+     <span class="n">todos</span><span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://jsonplaceholder.typicode.com/todos/</span><span class="si">{</span><span class="n">todo_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+     <span class="n">todos</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+     <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="n">content_types</span><span class="o">.</span><span class="n">APPLICATION_JSON</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">todos</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 
 
  <span class="c1"># You can continue to use other utilities just as before</span>
@@ -3667,7 +3691,7 @@ Some event sources require headers and cookies to be encoded as <code>multiValue
 </div>
 </div>
 <h3 id="debug-mode">Debug mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h3>
-<p>You can enable debug mode via <code>debug</code> param, or via <code>POWERTOOLS_DEV</code> <a href="../../../#environment-variables">environment variable</a>.</p>
+<p>You can enable debug mode via <code>debug</code> param, or via <code>POWERTOOLS_DEV</code> <a href="../../../#environment-variables" target="_blank">environment variable</a>.</p>
 <p>This will enable full tracebacks errors in the response, print request and responses, and set CORS in development mode.</p>
 <details class="danger" open="open">
 <summary>Danger</summary>
@@ -4897,7 +4921,7 @@ it made it impossible for static checkers like Mypy and IDEs IntelliSense to kno
   <small>
     
       Last update:
-      2023-05-31
+      2023-06-09
     
   </small>
 </div>

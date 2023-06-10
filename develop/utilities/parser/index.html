@@ -1127,7 +1127,7 @@
 
 <!-- markdownlint-disable MD043 -->
 
-<p>This utility provides data parsing and deep validation using <a href="https://pydantic-docs.helpmanual.io/">Pydantic</a>.</p>
+<p>This utility provides data parsing and deep validation using <a href="https://pydantic-docs.helpmanual.io/" target="_blank">Pydantic</a>.</p>
 <h2 id="key-features">Key features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Defines data in pure Python classes, then parse, validate and extract only what you want</li>
@@ -1143,7 +1143,7 @@
 <details class="warning" open="open">
 <summary>Warning</summary>
 <p>This will increase the compressed package size by &gt;10MB due to the Pydantic dependency.</p>
-<p>To reduce the impact on the package size at the expense of 30%-50% of its performance <a href="https://pydantic-docs.helpmanual.io/install/#performance-vs-package-size-trade-off">Pydantic can also be
+<p>To reduce the impact on the package size at the expense of 30%-50% of its performance <a href="https://pydantic-docs.helpmanual.io/install/#performance-vs-package-size-trade-off" target="_blank">Pydantic can also be
 installed without binary files</a>:</p>
 <p>Pip example: <code>SKIP_CYTHON=1 pip install --no-binary pydantic aws-lambda-powertools[parser]</code></p>
 </details>
@@ -1368,6 +1368,18 @@ installed without binary files</a>:</p>
 <td>Lambda Event Source payload for Amazon API Gateway v2 payload</td>
 </tr>
 <tr>
+<td><strong>CloudFormationCustomResourceCreateModel</strong></td>
+<td>Lambda Event Source payload for AWS CloudFormation <code>CREATE</code> operation</td>
+</tr>
+<tr>
+<td><strong>CloudFormationCustomResourceUpdateModel</strong></td>
+<td>Lambda Event Source payload for AWS CloudFormation <code>UPDATE</code> operation</td>
+</tr>
+<tr>
+<td><strong>CloudFormationCustomResourceDeleteModel</strong></td>
+<td>Lambda Event Source payload for AWS CloudFormation <code>DELETE</code> operation</td>
+</tr>
+<tr>
 <td><strong>CloudwatchLogsModel</strong></td>
 <td>Lambda Event Source payload for Amazon CloudWatch Logs</td>
 </tr>
@@ -1545,7 +1557,7 @@ installed without binary files</a>:</p>
 <details class="tip" open="open">
 <summary>Tip</summary>
 <p>When extending a <code>string</code> field containing JSON, you need to wrap the field
-with <a href="https://pydantic-docs.helpmanual.io/usage/types/#json-type">Pydantic's Json Type</a>:</p>
+with <a href="https://pydantic-docs.helpmanual.io/usage/types/#json-type" target="_blank">Pydantic's Json Type</a>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1588,7 +1600,7 @@ with <a href="https://pydantic-docs.helpmanual.io/usage/types/#json-type">Pydant
 </span>
     <span class="k">assert</span> <span class="n">cancel_order</span><span class="o">.</span><span class="n">order_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 </code></pre></div></td></tr></table></div>
-<p>Alternatively, you could use a <a href="https://pydantic-docs.helpmanual.io/usage/validators/">Pydantic validator</a> to transform the JSON string into a dict before the mapping:</p>
+<p>Alternatively, you could use a <a href="https://pydantic-docs.helpmanual.io/usage/validators/" target="_blank">Pydantic validator</a> to transform the JSON string into a dict before the mapping:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2029,14 +2041,14 @@ with <a href="https://pydantic-docs.helpmanual.io/usage/types/#json-type">Pydant
 <h3 id="advanced-use-cases">Advanced use cases<a class="headerlink" href="#advanced-use-cases" title="Permanent link">&para;</a></h3>
 <details class="tip" open="open">
 <summary>Tip: Looking to auto-generate models from JSON, YAML, JSON Schemas, OpenApi, etc?</summary>
-<p>Use Koudai Aono's <a href="https://github.com/koxudaxi/datamodel-code-generator">data model code generation tool for Pydantic</a></p>
+<p>Use Koudai Aono's <a href="https://github.com/koxudaxi/datamodel-code-generator" target="_blank">data model code generation tool for Pydantic</a></p>
 </details>
-<p>There are number of advanced use cases well documented in Pydantic's doc such as creating <a href="https://pydantic-docs.helpmanual.io/usage/models/#faux-immutability">immutable models</a>, <a href="https://pydantic-docs.helpmanual.io/usage/models/#field-with-dynamic-default-value">declaring fields with dynamic values</a>.</p>
+<p>There are number of advanced use cases well documented in Pydantic's doc such as creating <a href="https://pydantic-docs.helpmanual.io/usage/models/#faux-immutability" target="_blank">immutable models</a>, <a href="https://pydantic-docs.helpmanual.io/usage/models/#field-with-dynamic-default-value" target="_blank">declaring fields with dynamic values</a>.</p>
 <details class="tip" open="open">
 <summary>Pydantic helper functions</summary>
-<p>Pydantic also offers <a href="https://pydantic-docs.helpmanual.io/usage/models/#helper-functions">functions</a> to parse models from files, dicts, string, etc.</p>
+<p>Pydantic also offers <a href="https://pydantic-docs.helpmanual.io/usage/models/#helper-functions" target="_blank">functions</a> to parse models from files, dicts, string, etc.</p>
 </details>
-<p>Two possible unknown use cases are Models and exception' serialization. Models have methods to <a href="https://pydantic-docs.helpmanual.io/usage/exporting_models/">export them</a> as <code>dict</code>, <code>JSON</code>, <code>JSON Schema</code>, and Validation exceptions can be exported as JSON.</p>
+<p>Two possible unknown use cases are Models and exception' serialization. Models have methods to <a href="https://pydantic-docs.helpmanual.io/usage/exporting_models/" target="_blank">export them</a> as <code>dict</code>, <code>JSON</code>, <code>JSON Schema</code>, and Validation exceptions can be exported as JSON.</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Converting data models in various formats</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2115,7 +2127,7 @@ with <a href="https://pydantic-docs.helpmanual.io/usage/types/#json-type">Pydant
   <small>
     
       Last update:
-      2023-05-31
+      2023-06-09
     
   </small>
 </div>

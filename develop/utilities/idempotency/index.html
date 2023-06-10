@@ -1501,7 +1501,7 @@ times with the same parameters</strong>. This makes idempotent operations safe t
 </table>
 <details class="tip" open="open">
 <summary>Tip: You can share a single state table for all functions</summary>
-<p>You can reuse the same DynamoDB table to store idempotency state. We add <code>module_name</code> and <a href="https://peps.python.org/pep-3155/">qualified name for classes and functions</a> in addition to the idempotency key as a hash key.</p>
+<p>You can reuse the same DynamoDB table to store idempotency state. We add <code>module_name</code> and <a href="https://peps.python.org/pep-3155/" target="_blank">qualified name for classes and functions</a> in addition to the idempotency key as a hash key.</p>
 </details>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">AWS Serverless Application Model (SAM) example</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1551,14 +1551,14 @@ times with the same parameters</strong>. This makes idempotent operations safe t
 </span></code></pre></div></td></tr></table></div>
 <details class="warning" open="open">
 <summary>Warning: Large responses with DynamoDB persistence layer</summary>
-<p>When using this utility with DynamoDB, your function's responses must be <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html#limits-items">smaller than 400KB</a>.</p>
+<p>When using this utility with DynamoDB, your function's responses must be <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html#limits-items" target="_blank">smaller than 400KB</a>.</p>
 <p>Larger items cannot be written to DynamoDB and will cause exceptions.</p>
 </details>
 <details class="info" open="open">
 <summary>Info: DynamoDB</summary>
 <p>Each function invocation will generally make 2 requests to DynamoDB. If the
 result returned by your Lambda is less than 1kb, you can expect 2 WCUs per invocation. For retried invocations, you will
-see 1WCU and 1RCU. Review the <a href="https://aws.amazon.com/dynamodb/pricing/">DynamoDB pricing documentation</a> to
+see 1WCU and 1RCU. Review the <a href="https://aws.amazon.com/dynamodb/pricing/" target="_blank">DynamoDB pricing documentation</a> to
 estimate the cost.</p>
 </details>
 <h3 id="idempotent-decorator">Idempotent decorator<a class="headerlink" href="#idempotent-decorator" title="Permanent link">&para;</a></h3>
@@ -1775,7 +1775,7 @@ estimate the cost.</p>
 </div>
 </div>
 <h4 id="batch-integration">Batch integration<a class="headerlink" href="#batch-integration" title="Permanent link">&para;</a></h4>
-<p>You can can easily integrate with <a href="../batch/">Batch utility</a> via context manager. This ensures that you process each record in an idempotent manner, and guard against a <a href="#lambda-timeouts">Lambda timeout</a> idempotent situation.</p>
+<p>You can can easily integrate with <a href="../batch/" target="_blank">Batch utility</a> via context manager. This ensures that you process each record in an idempotent manner, and guard against a <a href="#lambda-timeouts">Lambda timeout</a> idempotent situation.</p>
 <details open="open">
 <summary>Choosing an unique batch record attribute</summary>
 <p>In this example, we choose <code>messageId</code> as our idempotency key since we know it'll be unique.</p>
@@ -1918,7 +1918,7 @@ estimate the cost.</p>
 <details class="tip" open="open">
 <summary>Deserializing JSON strings in payloads for increased accuracy.</summary>
 <p>The payload extracted by the <code>event_key_jmespath</code> is treated as a string by default. This means there could be differences in whitespace even when the JSON payload itself is identical.</p>
-<p>To alter this behaviour, we can use the <a href="../jmespath_functions/#powertools_json-function">JMESPath built-in function</a> <code>powertools_json()</code> to treat the payload as a JSON object (dict) rather than a string.</p>
+<p>To alter this behaviour, we can use the <a href="../jmespath_functions/#powertools_json-function" target="_blank">JMESPath built-in function</a> <code>powertools_json()</code> to treat the payload as a JSON object (dict) rather than a string.</p>
 </details>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">payment.py</label><label for="__tabbed_4_2">Example event</label></div>
 <div class="tabbed-content">
@@ -2041,7 +2041,7 @@ estimate the cost.</p>
 <summary>Note</summary>
 <p>This is automatically done when you decorate your Lambda handler with <a href="#idempotent-decorator">@idempotent decorator</a>.</p>
 </details>
-<p>To prevent against extended failed retries when a <a href="https://aws.amazon.com/premiumsupport/knowledge-center/lambda-verify-invocation-timeouts/">Lambda function times out</a>, Powertools for AWS Lambda (Python) calculates and includes the remaining invocation available time as part of the idempotency record.</p>
+<p>To prevent against extended failed retries when a <a href="https://aws.amazon.com/premiumsupport/knowledge-center/lambda-verify-invocation-timeouts/" target="_blank">Lambda function times out</a>, Powertools for AWS Lambda (Python) calculates and includes the remaining invocation available time as part of the idempotency record.</p>
 <details class="example" open="open">
 <summary>Example</summary>
 <p>If a second invocation happens <strong>after</strong> this timestamp, and the record is marked as <code>INPROGRESS</code>, we will execute the invocation again as if it was in the <code>EXPIRED</code> state (e.g, <code>expire_seconds</code> field elapsed).</p>
@@ -2395,7 +2395,7 @@ This means that new invocations will execute your code again despite having the 
 <tr>
 <td><strong>event_key_jmespath</strong></td>
 <td><code>""</code></td>
-<td>JMESPath expression to extract the idempotency key from the event record using <a href="/utilities/jmespath_functions">built-in functions</a></td>
+<td>JMESPath expression to extract the idempotency key from the event record using <a href="/utilities/jmespath_functions" target="_blank">built-in functions</a></td>
 </tr>
 <tr>
 <td><strong>payload_validation_jmespath</strong></td>
@@ -2425,7 +2425,7 @@ This means that new invocations will execute your code again despite having the 
 <tr>
 <td><strong>hash_function</strong></td>
 <td><code>md5</code></td>
-<td>Function to use for calculating hashes, as provided by <a href="https://docs.python.org/3/library/hashlib.html">hashlib</a> in the standard library.</td>
+<td>Function to use for calculating hashes, as provided by <a href="https://docs.python.org/3/library/hashlib.html" target="_blank">hashlib</a> in the standard library.</td>
 </tr>
 </tbody>
 </table>
@@ -2696,7 +2696,7 @@ This means that new invocations will execute your code again despite having the 
 </div>
 </div>
 <h3 id="customizing-boto-configuration">Customizing boto configuration<a class="headerlink" href="#customizing-boto-configuration" title="Permanent link">&para;</a></h3>
-<p>The <strong><code>boto_config</code></strong> and <strong><code>boto3_session</code></strong> parameters enable you to pass in a custom <a href="https://botocore.amazonaws.com/v1/documentation/api/latest/reference/config.html">botocore config object</a> or a custom <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/core/session.html">boto3 session</a> when constructing the persistence store.</p>
+<p>The <strong><code>boto_config</code></strong> and <strong><code>boto3_session</code></strong> parameters enable you to pass in a custom <a href="https://botocore.amazonaws.com/v1/documentation/api/latest/reference/config.html" target="_blank">botocore config object</a> or a custom <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/core/session.html" target="_blank">boto3 session</a> when constructing the persistence store.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Custom session</label><label for="__tabbed_7_2">Custom config</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3132,7 +3132,7 @@ event - not the "raw" event Lambda was invoked with.</p>
 <p>The idempotency utility provides several routes to test your code.</p>
 <h3 id="disabling-the-idempotency-utility">Disabling the idempotency utility<a class="headerlink" href="#disabling-the-idempotency-utility" title="Permanent link">&para;</a></h3>
 <p>When testing your code, you may wish to disable the idempotency logic altogether and focus on testing your business logic. To do this, you can set the environment variable <code>POWERTOOLS_IDEMPOTENCY_DISABLED</code>
-with a truthy value. If you prefer setting this for specific tests, and are using Pytest, you can use <a href="https://docs.pytest.org/en/latest/monkeypatch.html">monkeypatch</a> fixture:</p>
+with a truthy value. If you prefer setting this for specific tests, and are using Pytest, you can use <a href="https://docs.pytest.org/en/latest/monkeypatch.html" target="_blank">monkeypatch</a> fixture:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">tests.py</label><label for="__tabbed_8_2">app.py</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3226,7 +3226,7 @@ with a truthy value. If you prefer setting this for specific tests, and are usin
 </div>
 </div>
 <h3 id="testing-with-dynamodb-local">Testing with DynamoDB Local<a class="headerlink" href="#testing-with-dynamodb-local" title="Permanent link">&para;</a></h3>
-<p>To test with <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html">DynamoDB Local</a>, you can replace the <code>DynamoDB client</code> used by the persistence layer with one you create inside your tests. This allows you to set the endpoint_url.</p>
+<p>To test with <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html" target="_blank">DynamoDB Local</a>, you can replace the <code>DynamoDB client</code> used by the persistence layer with one you create inside your tests. This allows you to set the endpoint_url.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">tests.py</label><label for="__tabbed_9_2">app.py</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3328,7 +3328,7 @@ with a truthy value. If you prefer setting this for specific tests, and are usin
 </div>
 </div>
 <h3 id="how-do-i-mock-all-dynamodb-io-operations">How do I mock all DynamoDB I/O operations<a class="headerlink" href="#how-do-i-mock-all-dynamodb-io-operations" title="Permanent link">&para;</a></h3>
-<p>The idempotency utility lazily creates the dynamodb <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#table">Table</a> which it uses to access DynamoDB.
+<p>The idempotency utility lazily creates the dynamodb <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#table" target="_blank">Table</a> which it uses to access DynamoDB.
 This means it is possible to pass a mocked Table resource, or stub various methods.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">tests.py</label><label for="__tabbed_10_2">app.py</label></div>
 <div class="tabbed-content">
@@ -3428,14 +3428,14 @@ This means it is possible to pass a mocked Table resource, or stub various metho
 </div>
 <h2 id="extra-resources">Extra resources<a class="headerlink" href="#extra-resources" title="Permanent link">&para;</a></h2>
 <p>If you're interested in a deep dive on how Amazon uses idempotency when building our APIs, check out
-<a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">this article</a>.</p>
+<a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/" target="_blank">this article</a>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2023-05-31
+      2023-06-08
     
   </small>
 </div>

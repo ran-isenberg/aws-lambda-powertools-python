@@ -1919,7 +1919,7 @@
 </div>
 </div>
 <h4 id="set_correlation_id-method">set_correlation_id method<a class="headerlink" href="#set_correlation_id-method" title="Permanent link">&para;</a></h4>
-<p>You can also use <code>set_correlation_id</code> method to inject it anywhere else in your code. Example below uses <a href="../../utilities/data_classes/">Event Source Data Classes utility</a> to easily access events properties.</p>
+<p>You can also use <code>set_correlation_id</code> method to inject it anywhere else in your code. Example below uses <a href="../../utilities/data_classes/" target="_blank">Event Source Data Classes utility</a> to easily access events properties.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">set_correlation_id_method.py</label><label for="__tabbed_3_2">set_correlation_id_method.json</label><label for="__tabbed_3_3">set_correlation_id_method_output.json</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2308,7 +2308,7 @@
 </div>
 </div>
 <h4 id="clearing-all-state">Clearing all state<a class="headerlink" href="#clearing-all-state" title="Permanent link">&para;</a></h4>
-<p>Logger is commonly initialized in the global scope. Due to <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda Execution Context reuse</a>, this means that custom keys can be persisted across invocations. If you want all custom keys to be deleted, you can use <code>clear_state=True</code> param in <code>inject_lambda_context</code> decorator.</p>
+<p>Logger is commonly initialized in the global scope. Due to <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html" target="_blank">Lambda Execution Context reuse</a>, this means that custom keys can be persisted across invocations. If you want all custom keys to be deleted, you can use <code>clear_state=True</code> param in <code>inject_lambda_context</code> decorator.</p>
 <details class="tip" open="open">
 <summary>Tip: When is this useful?</summary>
 <p>It is useful when you add multiple custom keys conditionally, instead of setting a default <code>None</code> value if not present. Any key with <code>None</code> value is automatically removed by Logger.</p>
@@ -2663,7 +2663,7 @@
 </tbody>
 </table>
 <h3 id="reusing-logger-across-your-code">Reusing Logger across your code<a class="headerlink" href="#reusing-logger-across-your-code" title="Permanent link">&para;</a></h3>
-<p>Similar to <a href="../tracer/#reusing-tracer-across-your-code">Tracer</a>, a new instance that uses the same <code>service</code> name - env var or explicit parameter - will reuse a previous Logger instance. Just like <code>logging.getLogger("logger_name")</code> would in the standard library if called with the same logger name.</p>
+<p>Similar to <a href="../tracer/#reusing-tracer-across-your-code" target="_blank">Tracer</a>, a new instance that uses the same <code>service</code> name - env var or explicit parameter - will reuse a previous Logger instance. Just like <code>logging.getLogger("logger_name")</code> would in the standard library if called with the same logger name.</p>
 <p>Notice in the CloudWatch Logs output how <code>payment_id</code> appeared as expected when logging in <code>collect.py</code>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">logger_reuse.py</label><label for="__tabbed_13_2">logger_reuse_payment.py</label><label for="__tabbed_13_3">logger_reuse_output.json</label></div>
 <div class="tabbed-content">
@@ -2760,7 +2760,7 @@
 <p>Sampling decision happens at the Logger initialization. This means sampling may happen significantly more or less than depending on your traffic patterns, for example a steady low number of invocations and thus few cold starts.</p>
 <details class="note" open="open">
 <summary>Note</summary>
-<p>Open a <a href="https://github.com/awslabs/aws-lambda-powertools-python/issues/new?assignees=&amp;labels=feature-request%2C+triage&amp;template=feature_request.md&amp;title=">feature request</a> if you want Logger to calculate sampling for every invocation</p>
+<p>Open a <a href="https://github.com/awslabs/aws-lambda-powertools-python/issues/new?assignees=&amp;labels=feature-request%2C+triage&amp;template=feature_request.md&amp;title=" target="_blank">feature request</a> if you want Logger to calculate sampling for every invocation</p>
 </details>
 <div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">sampling_debug_logs.py</label><label for="__tabbed_14_2">sampling_debug_logs_output.json</label></div>
 <div class="tabbed-content">
@@ -3927,14 +3927,14 @@ for the given name and level to the logging module. By default, this logs all bo
 </div>
 <!-- markdownlint-disable MD013 -->
 <h3 id="how-do-i-aggregate-and-search-powertools-for-aws-lambda-python-logs-across-accounts">How do I aggregate and search Powertools for AWS Lambda (Python) logs across accounts?<a class="headerlink" href="#how-do-i-aggregate-and-search-powertools-for-aws-lambda-python-logs-across-accounts" title="Permanent link">&para;</a></h3>
-<p>As of now, ElasticSearch (ELK) or 3rd party solutions are best suited to this task. Please refer to this <a href="https://github.com/awslabs/aws-lambda-powertools-python/issues/460">discussion for more details</a></p>
+<p>As of now, ElasticSearch (ELK) or 3rd party solutions are best suited to this task. Please refer to this <a href="https://github.com/awslabs/aws-lambda-powertools-python/issues/460" target="_blank">discussion for more details</a></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2023-06-01
+      2023-06-08
     
   </small>
 </div>
